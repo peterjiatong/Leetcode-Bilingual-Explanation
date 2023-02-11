@@ -1,2 +1,2 @@
 # LC-solution-bilingual
-provide leetcode solutions with English and Chinese
+provide leetcode solutions in bothEnglish and Chinese
