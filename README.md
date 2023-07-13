@@ -1,2 +1,2 @@
 # LC-solution-bilingual
-provide leetcode solutions in both English and Chinese
+[中文版本](/README_CN.md)
