@@ -87,3 +87,26 @@ class Solution:
             # Else, put target - nums[i] and its index in the hashmap
             values[target - nums[i]] = i
 ```
+
+### C++
+```c++
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        // Create a map of values w/ indices of the elements "looking for it"
+        unordered_map<int, int> map;
+        
+        // For each number in nums
+        for (int i = 0; i < nums.size(); i++) {
+            // If the element is in the map, return the indices
+            auto it = map.find(nums[i]);
+            if (it != map.end()) return {it->second, i};
+
+            // Else store target - current element with the current index
+            map[target - nums[i]] = i;
+        }
+        
+        return {}; // Solution not found, return empty vector. SHOULD NOT HAPPEN!
+    }
+};
+```
