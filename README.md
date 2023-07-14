@@ -2,7 +2,7 @@
 
 [中文版本](/README_CN.md)
 
-This Repo offers a comprehensive collection of LeetCode solution in both Java and Python3, focus on providing not only well-formatted code, but also giving comments and explaination in English and Chinese.
+This Repo offers a comprehensive collection of LeetCode solutions in both Java and Python3, focusing on providing well-formatted code and comments and explanations in English and Chinese.
 
 | Title | Tags | Difficulty | ReMark |
 |:-----:|:--------:|:---------:|:------:|
