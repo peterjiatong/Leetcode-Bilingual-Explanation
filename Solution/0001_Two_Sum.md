@@ -1,6 +1,6 @@
 # [Two Sum](https://leetcode.com/problems/two-sum/)
 
-[中文版本](/Users/to/Solution_CN/0001_Two_Sum_CN.md)
+[中文版本](/Solution_CN/0001_Two_Sum_CN.md)
 
 ## Solution
 
