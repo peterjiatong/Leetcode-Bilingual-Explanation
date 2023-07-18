@@ -6,4 +6,4 @@
 
 |                Title                |      Tags      | Difficulty | ReMark |
 | :----------------------------------: | :------------: | :--------: | :----: |
-| [1. 两数之和](/Solution/0001_Two_Sum_CN.md) | array, hashmap |    easy    |   -   |
+| [1. 两数之和](/Solution_CN/0001_Two_Sum_CN.md) | array, hashmap |    easy    |   -   |
