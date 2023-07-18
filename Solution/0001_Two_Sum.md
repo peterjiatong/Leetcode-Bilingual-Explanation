@@ -2,9 +2,7 @@
 
 [中文版本](/Solution_CN/0001_Two_Sum_CN.md)
 
-## Solution
-
-**Solution 1: Brute-force**
+## Solution 1: Brute-force
 
 The simplest solution is to go through every two pair and check if they can sum up to the target, by using 2 for-loop, where the outer loop iterates from the first element to the second last element(notes as i), and the inner loop iterates from i to the last element.
 
