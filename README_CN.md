@@ -7,3 +7,4 @@
 |                    Title                    |     Tags     | Difficulty | ReMark |
 | :-----------------------------------------: | :----------: | :--------: | :----: |
 | [1. 两数之和](/Solution_CN/0001_Two_Sum_CN.md) | 数组，哈希表 |    简单    |   -   |
+|[121. 买卖股票的最佳时机](/Solution_CN/0121_Best_Time_to_Buy_and_Sell_Stock_CN.md)               |   数组，动态规划   |    Easy    |  - |
