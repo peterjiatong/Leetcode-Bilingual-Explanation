@@ -45,19 +45,24 @@ public:
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        map = {}    # Create a map of symbols to their most recent index
-        longestLength = 0
-
-        # Traverse the string and use a sliding window to keep track of the substring
-        l = 0
-        for r in range(len(s)):
-            # If s[r] has a duplicate in the range, shift the window to after the 1st occurrence
-            if s[r] in map:
-                l = max(map[s[r]], l)
-
-            # Calculate the longest substring length and update the map
-            longestLength = max(longestLength, r - l + 1)
-            map[s[r]] = r + 1
-
-        return longestLength
+        # Initialize variables
+        start = 0            # Start of the current substring
+        max_length = 0       # Length of the longest substring found so far
+        char_index_map = {}  # A dictionary to store the index of each character
+        
+        # Iterate through the string
+        for end in range(len(s)):
+            # If the character is in the map and its index is greater than or equal to the start,
+            # update the start to the next character after the repeated one
+            if s[end] in char_index_map and char_index_map[s[end]] >= start:
+                start = char_index_map[s[end]] + 1
+            
+            # Update the index of the current character in the map
+            char_index_map[s[end]] = end
+            
+            # Update the maximum length if a longer substring is found
+            max_length = max(max_length, end - start + 1)
+        
+        return max_length
 ```
+Source: ChatGPT

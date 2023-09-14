@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
 ## Solution 1: Brute-force
@@ -110,3 +111,24 @@ class Solution:
         # Return profit, note that if there's no profit to make, we return 0
         return profit
 ```
+=======
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # Initialize the maximum profit and the minimum price
+        profit = 0
+        minPrice = prices[0]
+        
+        # Iterate through the prices to calculate the maximum profit
+        for price in prices:
+            # Update the minimum price if the current price is lower
+            if price < minPrice:
+                minPrice = price
+            else:
+                # Calculate the potential profit and update the maximum profit
+                profit = max(profit, price - minPrice)
+        
+        # Return the final maximum profit
+        return profit
+```
+>>>>>>> f917540d67411d27320e8b972f35e5d8a655aede
