@@ -1,14 +1,14 @@
-# [57. Insert Interval](https://leetcode.com/problems/insert-interval/)
+# [57.插入区间](https://leetcode.com/problems/insert-interval/)
 
-[中文版本](/Solution_CN/0057_Insert_Interva_CN)
+[English Version](/Solution/0057_Insert_Interval.md)
 
 ## Solution
 
-Traverse to find the correct position for newInterval, set up a list to store correct answer, during the for loop, 3 cases can show up:
+遍历以找到 newInterval 的正确位置，使用一个列表以存储正确答案。在 for 循环过程中，可能会出现三种情况：
 
-1. intervals[i][1] < newInterval[0]: in this case, interval we are looking at is less than the newInterval, we add interval into the answer list and move on.
-2. newinterval[1] < interval[i][0]: interval we are looking at is greater than the newInterval, in this case, we add newInterval to the answer list, and than add interval.
-3. otherwise, we know there is a overlap occurs, we need to modify start and end value of the newInterval in order to track the correct answer.
+1. intervals[i][1] 小于 newInterval[0]：在这种情况下，我们正在查看的区间小于 newInterval，我们将这个区间添加到答案列表中即可。
+2. newInterval[1] 小于 intervals[i][0]：我们正在查看的区间大于 newInterval，在这种情况下，我们将 newInterval 添加到答案列表中，然后添加正在查看的区间。
+3. 不符合以上任意情况时，表明区间之间有重叠发生，我们需要修改 newInterval 的起始和结束值以追踪到正确答案。
 
 Python
 

@@ -27,6 +27,8 @@ class Solution {
         return new int[]{};
     }
 }
+
+//Tong
 ```
 
 ### Python
@@ -41,6 +43,8 @@ class Solution:
                 # If their sum equals to target, return {i, j}
                 if nums[i] + nums[j] == target:
                     return [i, j]
+
+#Tong
 ```
 
 **Solution 2: Hash-Map**
@@ -68,6 +72,8 @@ class Solution {
     return new int[]{};
     }
 }
+
+//Tong
 ```
 
 ### Python
@@ -87,13 +93,14 @@ class Solution:
 ```
 
 ### C++
+
 ```c++
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         // Create a map of values w/ indices of the elements "looking for it"
         unordered_map<int, int> map;
-        
+  
         // For each number in nums
         for (int i = 0; i < nums.size(); i++) {
             // If the element is in the map, return the indices
@@ -103,8 +110,10 @@ public:
             // Else store target - current element with the current index
             map[target - nums[i]] = i;
         }
-        
+  
         return {}; // Solution not found, return empty vector. SHOULD NOT HAPPEN!
     }
 };
+
+//Tong
 ```
