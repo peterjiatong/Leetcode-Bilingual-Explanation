@@ -7,7 +7,7 @@
 |                                      Title                                      |         Tags         | Difficulty | ReMark |
 | :-----------------------------------------------------------------------------: | :------------------: | :--------: | :----: |
 |                   [1. 两数之和](/Solution_CN/0001_Two_Sum_CN.md)                   |     数组，哈希表     |    简单    |   ✅   |
-|                               [11. 盛最多水的容器](/Solution_CN/0011_Container_With_Most_Water_CN.md)                               |     数组，双指针     |    一般    |   ✅   |
+|      [11. 盛最多水的容器](/Solution_CN/0011_Container_With_Most_Water_CN.md)      |     数组，双指针     |    一般    |   ✅   |
 |                    [15.三数之和](/Solution_CN/0015_3Sum_CN.md)                    |     数组，哈希集     |    一般    |   ✅   |
 |               [39.组合总和](/Solution_CN/0039_Combination_Sum_CN.md)               |     数组，回溯法     |    一般    |   ✅   |
 |               [56.合并区间](/Solution_CN/0056_Merge_Intervals_CN.md)               |      数组，排序      |    一般    |   ✅   |
@@ -17,4 +17,5 @@
 |             [169. 多数元素](/Solution_CN/0169_Majority_Element_CN.md)             |     数组，哈希表     |    简单    |   ✅   |
 |          [217. 存在重复元素](/Solution_CN/0217_Contains_Duplicate_CN.md)          |        哈希集        |    简单    |   ✅   |
 |  [238.除自身以外数组的乘积](/Solution_CN/0238_Product_of_Array_Except_Self_CN.md)  |         数组         |    一般    |   ✅   |
+|                                  [252. 会议室](/Solution_CN/0252_Meeting_Rooms_CN.md)                                  |         排序         |    简单    |   ✅   |
 |         [278. 第一个错误的版本](/Solution_CN/0278_First_Bad_Version_CN.md)         |    数组，二分搜索    |    简单    |   ✅   |
