@@ -25,12 +25,3 @@ This Repo offers a comprehensive collection of LeetCode solutions in multiple la
 |                                                [252. Meeting Rooms](/Solution/0252_Meeting_Rooms.md)                                                |           Sorting           |    Easy    |   ✅   |
 |                             [278. First Bad Version](/Solution/0278_First_Bad_Version.md)                             |     Array, Binary Search     |    Easy    |   ✅   |
 |                     [973. K Closest Points to Origin](/Solution/0973_K_Close_Points_To_Origin.md)                     |                              |   Medium   |   -   |
-
-We can identify the first bad version using binary search. Below are two cases that may occur during the approach:
-
-1. If `mid` is a bad version, we update `right = mid`.
-2. If `mid` is a good version, we update `left = mid + 1`. This is because we are trying to find the first bad version, so we can safely ignore the good versions.
-
-We stop when `left` is not less than `right`; at this point, `left` should point to our answer.
-
-This solution has a time complexity of �(log⁡�)**O**(**lo**g**n**) due to the use of binary search.
