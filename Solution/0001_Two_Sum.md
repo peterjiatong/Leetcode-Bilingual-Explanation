@@ -8,7 +8,7 @@ The simplest solution is to go through every two pair and check if they can sum 
 
 This approach has a O(n^2) time Complexity
 
-### Java
+JAva
 
 ```java
 class Solution {
@@ -31,7 +31,7 @@ class Solution {
 //Tong
 ```
 
-### Python
+Python:
 
 ```python
 class Solution:
@@ -52,7 +52,7 @@ For this solution, we will store (target - num[i], index i) into a hashmap. whil
 
 This is an efficient approach because hashmap can search it's key in O(1) time, so the time complexity for this solution is O(n).
 
-### Java
+Java:
 
 ```java
 class Solution {
@@ -76,7 +76,7 @@ class Solution {
 //Tong
 ```
 
-### Python
+Python:
 
 ```python
 class Solution:
@@ -92,7 +92,7 @@ class Solution:
             values[target - nums[i]] = i
 ```
 
-### C++
+C++:
 
 ```c++
 class Solution {

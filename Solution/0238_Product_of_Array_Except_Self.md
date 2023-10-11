@@ -10,7 +10,7 @@ To do this, we can set up an array called ans. We start by setting ans[0] to 1. 
 
 This solution has an O(n) time complexity and an O(n) or O(1) space complexity.
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -34,10 +34,10 @@ class Solution {
     }
 }
 
-//Tong, 9/16/2023
+//Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -55,5 +55,5 @@ class Solution:
 
         return ans
 
-#Tong, 9/16/2023
+#Tong
 ```

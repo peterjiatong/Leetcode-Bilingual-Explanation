@@ -12,8 +12,7 @@ The picture above (from LeetCode) demonstrates the concept well. If the sum of t
 
 Let n be the size of the given candidates, T be the target, and Min be the minimum value among the candidates. The maximum depth of the "tree" we build would be (T/Min) + 1. Therefore, this solution has a time complexity of O(n^((T/Min) + 1)).
 
-
-Java
+Java:
 
 ```java
 class Solution {
@@ -44,10 +43,10 @@ class Solution {
     }
 }
 
-//Tong, 9/19/2023
+//Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -75,5 +74,5 @@ class Solution:
 
         return ans
 
-# Tong, 9/19/2023
+# Tong
 ```

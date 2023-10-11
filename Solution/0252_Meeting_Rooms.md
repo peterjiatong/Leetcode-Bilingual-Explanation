@@ -8,7 +8,7 @@ Sort the given array `intervals` by the first element of each interval. Then, si
 
 This solution has an `O(n log n)` time complexity, and an `O(1)` space complexity.
 
-Java Solution:
+Java:
 
 ```java
 class Solution {
@@ -21,10 +21,10 @@ class Solution {
     }
 }
 
-// Tong, 02/10/2023
+// Tong
 ```
 
-Python Solution:
+Python:
 
 ```python
 class Solution:
@@ -36,5 +36,5 @@ class Solution:
   
         return True
 
-# Tong, 02/10/2023
+# Tong
 ```

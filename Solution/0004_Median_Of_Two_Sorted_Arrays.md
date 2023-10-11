@@ -8,7 +8,8 @@ The algorithm leverages binary search to efficiently partition the arrays and th
 
 O(log(min(n, m)) time, O(1) space
 
-### C++
+C++:
+
 ```c++
 class Solution {
 public:

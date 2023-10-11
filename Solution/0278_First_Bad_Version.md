@@ -13,7 +13,7 @@ We stop when `left` is not less than `right`; at this point, `left` should point
 
 This solution has a time complexity of `O(log n)` due to the use of binary search.
 
-Java solution
+Java:
 
 ```java
 /* The isBadVersion API is defined in the parent class VersionControl.
@@ -35,10 +35,10 @@ public class Solution extends VersionControl {
 }
 }
 
-// Tong, 9/21/2023
+// Tong
 ```
 
-Python solution
+Python:
 
 ```python
 # The isBadVersion API is already defined for you.
@@ -57,5 +57,5 @@ class Solution:
   
         return left
 
-# Tong, 9/21/2023
+# Tong
 ```

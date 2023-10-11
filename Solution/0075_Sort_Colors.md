@@ -8,7 +8,7 @@ Traverse the given array to count the occurrences of 0, 1, and 2, and store thes
 
 This solution has a time complexity of `O(n)` and a space complexity of `O(3)`.
 
-Java solution
+Java:
 
 ```java
 class Solution {
@@ -33,10 +33,10 @@ class Solution {
     }
 }
 
-// Tong, 9/21/2023
+// Tong
 ```
 
-Python solution
+Python:
 
 ```python
 class Solution:
@@ -59,7 +59,7 @@ class Solution:
                 cumulative += 1
             count += 1
 
-# Tong, 9/21/2023
+# Tong
 ```
 
 ## Solution 2: Two Pointers, One Pass
@@ -68,7 +68,7 @@ The idea behind this solution is to traverse the array only once. If the value a
 
 This solution has an `O(n)` time complexity as we perform the operation in one pass, which is significantly faster than solution 1. The space complexity is `O(1)`, as only a constant space is used for the swap.
 
-Java solution
+Java:
 
 ```java
 class Solution {
@@ -93,16 +93,17 @@ class Solution {
         }
 }
 
-// Tong, 9/21/2023
     public void swap(int[] nums, int p1, int p2){
         int temp = nums[p1];
         nums[p1] = nums[p2];
         nums[p2] = temp;
     }
 }
+
+// Tong
 ```
 
-Python solution
+Python:
 
 ```python
 class Solution:
@@ -132,5 +133,5 @@ class Solution:
             else:
                 curr += 1
 
-# Tong, 9/21/2023
+# Tong
 ```

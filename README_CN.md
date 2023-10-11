@@ -14,8 +14,9 @@
 |               [57.插入区间](/Solution_CN/0057_Insert_Interva_CN.md)               |         数组         |    一般    |   ✅   |
 |                 [75.颜色分类](/Solution_CN/0075_Sort_Colors_CN.md)                 | 数组，双指针，计数法 |    一般    |   ✅   |
 | [121. 买卖股票的最佳时机](/Solution_CN/0121_Best_Time_to_Buy_and_Sell_Stock_CN.md) |    数组，动态规划    |    简单    |   ✅   |
+|                 [134. 加油站](/Solution_CN/0134_Gas_Station_CN.md)                 |         数组         |    一般    |   ✅   |
 |             [169. 多数元素](/Solution_CN/0169_Majority_Element_CN.md)             |     数组，哈希表     |    简单    |   ✅   |
 |          [217. 存在重复元素](/Solution_CN/0217_Contains_Duplicate_CN.md)          |        哈希集        |    简单    |   ✅   |
 |  [238.除自身以外数组的乘积](/Solution_CN/0238_Product_of_Array_Except_Self_CN.md)  |         数组         |    一般    |   ✅   |
-|                                  [252. 会议室](/Solution_CN/0252_Meeting_Rooms_CN.md)                                  |         排序         |    简单    |   ✅   |
+|                [252. 会议室](/Solution_CN/0252_Meeting_Rooms_CN.md)                |         排序         |    简单    |   ✅   |
 |         [278. 第一个错误的版本](/Solution_CN/0278_First_Bad_Version_CN.md)         |    数组，二分搜索    |    简单    |   ✅   |

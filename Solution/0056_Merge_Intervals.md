@@ -11,9 +11,9 @@ Before we merge the given intervals, we need to sort them, as they are not provi
 
 After the loop, make sure to append `[left, right]` again, as the last merged valid interval has not been added to our answer list.
 
-This solution has a time complexity of` O(n log n)` because sorting takes` O(n log n) `and looping takes `O(n)`. The space complexity would be `O(n)`, as the answer list may be the same size as the given intervals.
+This solution has a time complexity of ` O(n log n)` because sorting takes `O(n log n)`and looping takes `O(n)`. The space complexity would be `O(n)`, as the answer list may be the same size as the given intervals.
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -42,10 +42,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -72,5 +72,5 @@ class Solution:
 
         return ans
 
-# Tong, 9/20/2023
+# Tong
 ```

@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-
 # [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
+[中文版本](/Solution_CN/0121_Best_Time_to_Buy_and_Sell_Stock_CN.md)
 
 ## Solution 1: Brute-force
 
@@ -8,7 +8,7 @@ For this approach, we only need to find the max profit while iterates through th
 
 Note that this solution has a O(n^2) time complexity, Leetcode will not accept this solution due to "Time Limit Exceeded"
 
-### Java
+Java:
 
 ```java
 class Solution {
@@ -39,7 +39,7 @@ class Solution {
 //Tong
 ```
 
-### Python
+python:
 
 ```python
 class Solution:
@@ -72,7 +72,7 @@ This is similer to solution 1, however we only need to iterates the given array 
 
 This approach has a O(n) time complexity.
 
-### Java
+Java:
 
 ```java
 class Solution {
@@ -101,7 +101,7 @@ class Solution {
 //Tong
 ```
 
-### Python
+Python:
 
 ```python
 class Solution:

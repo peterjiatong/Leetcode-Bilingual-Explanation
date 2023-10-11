@@ -6,7 +6,7 @@
 
 This solution simply just compares every possible pair of the given array height, time complexity is `O(n^2)` because we put a loop inside of a loop, space complexity is `O(1)` since constant extra space is used.
 
-Java solution
+Java:
 
 ```java
 class Solution {
@@ -22,10 +22,10 @@ class Solution {
     }
 }
 
-// Tong, 9/22/2023
+// Tong
 ```
 
-Python solution
+Python:
 
 ```python
 class Solution:
@@ -39,7 +39,7 @@ class Solution:
 
         return max
 
-# Tong, 9/22/2023
+# Tong
 ```
 
 ## Solution 2: Two Pointers
@@ -48,7 +48,7 @@ We set up two pointers, left and right, initializing them to 0 and height.length
 
 This solution has a time complexity of `O(n)` due to a single pass and a space complexity of `O(1)`.
 
-Java Solution
+Java:
 
 ```java
 class Solution {
@@ -72,9 +72,11 @@ class Solution {
         return max;
     }
 }
+
+// Tong
 ```
 
-Python Solution
+Python:
 
 ```python
 class Solution:
@@ -94,5 +96,5 @@ class Solution:
 
         return max
 
-# Tong, 9/22/2023
+# Tong
 ```

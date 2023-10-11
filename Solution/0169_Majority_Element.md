@@ -8,7 +8,7 @@ This Solution is relatively stright forward, we can get the answer by count the 
 
 This solution has a `O(n)` Time complexity and `O(n)` Space complexity.
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -32,10 +32,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -53,7 +53,7 @@ class Solution:
 
         return 0
 
-# Tong, 9/20/2023
+# Tong
 ```
 
 ## Solution 2: Math
@@ -62,7 +62,7 @@ According to the question, majority element must exists in the given array, if w
 
 This solution has a `O(n log n) `time complexity due to sorting, but it only has a `O(1) `space complexity.
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -72,10 +72,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -84,5 +84,5 @@ class Solution:
         return nums[int(len(nums) / 2)]
 
 
-# Tong, 9/20/2023
+# Tong
 ```

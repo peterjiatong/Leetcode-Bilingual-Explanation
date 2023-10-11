@@ -8,7 +8,7 @@ A HashSet is one of the best data structures for these types of questions since 
 
 This Solution has an `O(n)` time complexity and an `O(n)` space complexity(one HashSet used)
 
-Java solution
+Java:
 
 ```java
 class Solution {
@@ -26,10 +26,10 @@ class Solution {
     }
 }
 
-// Tong, 9/22/2023
+// Tong
 ```
 
-Python Solution
+Python:
 
 ```python
 class Solution:
@@ -42,5 +42,5 @@ class Solution:
             seen.add(num)
         return False
 
-# Tong, 9/22/2023
+# Tong
 ```

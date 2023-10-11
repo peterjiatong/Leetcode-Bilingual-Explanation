@@ -10,7 +10,7 @@ Traverse to find the correct position for newInterval, set up a list to store co
 2. newinterval[1] < interval[i][0]: interval we are looking at is greater than the newInterval, in this case, we add newInterval to the answer list, and than add interval.
 3. otherwise, we know there is a overlap occurs, we need to modify start and end value of the newInterval in order to track the correct answer.
 
-Python
+Python:
 
 ```python
 # Solution 1 (Single Pass) | O(n) time, O(n) space
@@ -41,7 +41,7 @@ class Solution:
 #Kevin
 ```
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -78,5 +78,5 @@ class Solution {
     }
 }
 
-//Tong, 9/14/2023
+//Tong
 ```
