@@ -11,9 +11,9 @@
 
 当 `left` 不小于 `right` 时我们停止；此时，`left` 应该指向我们的答案。
 
-由于使用了二分搜索，这个解决方案的时间复杂度为`O(log n)`。
+由于使用了二分搜索，这个解决方案的时间复杂度为 `O(log n)`。
 
-Java解法
+Java:
 
 ```java
 /* The isBadVersion API is defined in the parent class VersionControl.
@@ -35,10 +35,10 @@ public class Solution extends VersionControl {
 }
 }
 
-// Tong, 9/21/2023
+// Tong
 ```
 
-Python解法
+Python:
 
 ```python
 # The isBadVersion API is already defined for you.
@@ -57,5 +57,5 @@ class Solution:
   
         return left
 
-# Tong, 9/21/2023
+# Tong
 ```

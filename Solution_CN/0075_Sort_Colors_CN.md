@@ -8,7 +8,7 @@
 
 此解决方案的时间复杂度为 `O(n)`，空间复杂度为 `O(3)`。
 
-Java解法
+Java:
 
 ```java
 class Solution {
@@ -33,10 +33,10 @@ class Solution {
     }
 }
 
-// Tong, 9/21/2023
+// Tong
 ```
 
-Python 解法
+Python:
 
 ```python
 class Solution:
@@ -59,7 +59,7 @@ class Solution:
                 cumulative += 1
             count += 1
 
-# Tong, 9/21/2023
+# Tong
 ```
 
 ## 解决方案2：双指针 + 一次遍历
@@ -68,7 +68,7 @@ class Solution:
 
 由于我们只遍历了一次数组，所以这个解决方案的时间复杂度为 `O(n)`，比解决方案1显著快。空间复杂度为 `O(1)`，因为交换只使用了固定的空间。
 
-Java解法
+Java:
 
 ```java
 class Solution {
@@ -93,16 +93,17 @@ class Solution {
         }
 }
 
-// Tong, 9/21/2023
     public void swap(int[] nums, int p1, int p2){
         int temp = nums[p1];
         nums[p1] = nums[p2];
         nums[p2] = temp;
     }
 }
+
+// Tong
 ```
 
-Python解法
+Python:
 
 ```python
 class Solution:
@@ -132,5 +133,5 @@ class Solution:
             else:
                 curr += 1
 
-# Tong, 9/21/2023
+# Tong
 ```

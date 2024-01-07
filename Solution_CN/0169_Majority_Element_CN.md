@@ -8,7 +8,7 @@
 
 该解决方案的时间复杂度为 `O(n)`，空间复杂度也为 `O(n)`。
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -32,10 +32,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -53,16 +53,16 @@ class Solution:
 
         return 0
 
-# Tong, 9/20/2023
+# Tong
 ```
 
 ## 解法2：数学法
 
 根据题目可知，多数元素必定存在于给定的数组中。如果我们对给定数组进行排序，答案一定会出现在索引 `nums.length / 2` 处。
 
-由于排序的原因，这个解决方案的时间复杂度为` O(nlogn)`，但其空间复杂度仅为` O(1)`。
+由于排序的原因，这个解决方案的时间复杂度为 ` O(nlogn)`，但其空间复杂度仅为 ` O(1)`。
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -72,10 +72,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -84,5 +84,5 @@ class Solution:
         return nums[int(len(nums) / 2)]
 
 
-# Tong, 9/20/2023
+# Tong
 ```

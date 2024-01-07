@@ -4,11 +4,11 @@
 
 ## 解法：排序法
 
-通过对给定数组`intervals`的每个区间的第一个元素进行排序。然后，检查第二个元素是否小于下一个区间的第一个元素，以确保我们是否可以参加所有会议。
+通过对给定数组 `intervals`的每个区间的第一个元素进行排序。然后，检查第二个元素是否小于下一个区间的第一个元素，以确保我们是否可以参加所有会议。
 
 此解决方案的时间复杂度为 `O(n log n)`，空间复杂度为 `O(1)`。
 
-Java 解法:
+Java:
 
 ```java
 class Solution {
@@ -21,10 +21,10 @@ class Solution {
     }
 }
 
-// Tong, 02/10/2023
+// Tong
 ```
 
-Python 解法:
+Python:
 
 ```python
 class Solution:
@@ -36,5 +36,5 @@ class Solution:
   
         return True
 
-# Tong, 02/10/2023
+# Tong
 ```

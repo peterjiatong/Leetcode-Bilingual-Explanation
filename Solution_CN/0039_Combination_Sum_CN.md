@@ -12,7 +12,7 @@
 
 设 n 为给定候选数组的大小，T 为目标值，Min 为候选数组中的最小值。我们构建的“树”的最大深度将是 (T/Min) + 1。因此，这个解决方案的时间复杂度为 O(n^((T/Min) + 1))。
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -43,10 +43,10 @@ class Solution {
     }
 }
 
-//Tong, 9/19/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -74,5 +74,5 @@ class Solution:
 
         return ans
 
-# Tong, 9/19/2023
+# Tong
 ```

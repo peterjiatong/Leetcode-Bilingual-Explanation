@@ -6,7 +6,7 @@
 
 此解决方案比较了给定数组 'height' 中的每一对可能组合。由于嵌套循环，时间复杂度是 O(n^2)，空间复杂度是 O(1)，因为只使用了常数额外空间。"
 
-Java解法
+Java:
 
 ```java
 class Solution {
@@ -22,10 +22,10 @@ class Solution {
     }
 }
 
-// Tong, 9/22/2023
+// Tong
 ```
 
-Python解法
+Python:
 
 ```python
 class Solution:
@@ -39,7 +39,7 @@ class Solution:
 
         return max
 
-# Tong, 9/22/2023
+# Tong
 ```
 
 ## 解法2：双指针
@@ -48,7 +48,7 @@ class Solution:
 
 此解决方案的时间复杂度为 `O(n)`，因为只了进行一次遍历，空间复杂度为 `O(1)`。
 
-Java解法
+Java:
 
 ```java
 class Solution {
@@ -72,9 +72,11 @@ class Solution {
         return max;
     }
 }
+
+// Tong
 ```
 
-Python解法
+Python:
 
 ```python
 class Solution:
@@ -94,5 +96,5 @@ class Solution:
 
         return max
 
-# Tong, 9/22/2023
+# Tong
 ```

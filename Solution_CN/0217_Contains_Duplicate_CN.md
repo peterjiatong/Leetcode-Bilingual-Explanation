@@ -6,9 +6,9 @@
 
 哈希集是这类问题的最佳数据结构选择之一，因为它对于搜索和插入只需 `O(1)` 的时间复杂度。我们可以遍历给定数组 `nums`。如果 `nums[i]`在哈希集中，就返回 `true`；否则，将 `nums[i] `添加到哈希集中。
 
-此解法的时间复杂度和空间复杂度均为`O(n)`，因为我们使用了一个哈希集
+此解法的时间复杂度和空间复杂度均为 `O(n)`，因为我们使用了一个哈希集
 
-Java解法
+Java:
 
 ```java
 class Solution {
@@ -26,10 +26,10 @@ class Solution {
     }
 }
 
-// Tong, 9/22/2023
+// Tong
 ```
 
-Python解法
+Python:
 
 ```python
 class Solution:
@@ -42,5 +42,5 @@ class Solution:
             seen.add(num)
         return False
 
-# Tong, 9/22/2023
+# Tong
 ```

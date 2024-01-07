@@ -13,7 +13,7 @@
 
 该解决方案的时间复杂度为 `O(n log n)`，因为排序需要 `O(n log n)` 的时间，循环需要 `O(n)` 的时间。空间复杂度为 `O(n)`，因为答案列表的大小可能与给定的区间一样大。
 
-Java
+Java:
 
 ```java
 class Solution {
@@ -42,10 +42,10 @@ class Solution {
     }
 }
 
-// Tong, 9/20/2023
+// Tong
 ```
 
-Python
+Python:
 
 ```python
 class Solution:
@@ -72,5 +72,5 @@ class Solution:
 
         return ans
 
-# Tong, 9/20/2023
+# Tong
 ```

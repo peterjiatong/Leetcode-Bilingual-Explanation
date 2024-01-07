@@ -4,6 +4,18 @@ Leetcode: https://leetcode.com/problems/insert-interval/
 
 中文力扣: https://leetcode.com/problems/insert-interval/
 
+## Description / 题目描述
+
+You are given an array of non-overlapping intervals `intervals` where `intervals[i] = [starti, endi]` represent the start and the end of the `ith` interval and `intervals` is sorted in ascending order by `starti.` You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
+
+Insert `newInterval` into `intervals` such that `intervals` is still sorted in ascending order by `starti `and `intervals` still does not have any overlapping intervals (merge overlapping intervals if necessary).
+
+Return `intervals`  *after the insertion* .
+
+给你一个***无重叠的*** ，按照区间起始端点排序的区间列表。
+
+在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。
+
 ## Solution: Linear approach / 线性解法
 
 Create a List `ans` to record the answer. Iterate through the given `intervals` once, and during the iteration, there are 3 possible cases:
@@ -22,10 +34,9 @@ The time complexity of this solution is `O(n)`.
 2. `intervals[i][1] < newInterval[0]`： 这种情况说明 `newinterval`与当前区间不重合且在当前区间之后，无需做任何改变，将当前的 `interval`添加至 `ans后，`继续遍历下一个区间即可
 3. 若以上两种条件都不满足，说明 `newinterval`与当前区间有重合，需要将当前区间合并至 `newinterval`
 
-遍历之后，`ans`就是合并后的区间结果，需要注意的是，进入条件3后，`newinterval`可能没有被加入至`ans`，跳出遍历后需要手动天剑
+遍历之后，`ans`就是合并后的区间结果，需要注意的是，进入条件3后，`newinterval`可能没有被加入至 `ans`，跳出遍历后需要手动天剑
 
 此解时间复杂度为 `O(n)`
-
 
 Java:
 
@@ -63,7 +74,6 @@ class Solution {
 }
 
 ```
-
 
 Python:
 
