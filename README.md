@@ -4,6 +4,10 @@ This project aims to provide comprehensive bilingual (Chinese and English) analy
 
 本项目旨在提供力扣题目的中英文双语分析、解法、时间复杂度及答案。目前，我们提供Java和Python语言的代码。为保持代码简洁明了，代码注释将仅使用英文。
 
+Titles (or solutions) marked with a [⭐️](https://chat.openai.com/Solution/0238_Product_of_Array_Except_Self.md) indicate problems (or solutions) that the author finds particularly interesting and believes are important to understand.
+
+标题(或解法)前标有[⭐️](/Solution/0238_Product_of_Array_Except_Self.md)的题目是作者认为有比较有趣且需要掌握的题目(或解法)
+
 When you cannot find the problem you wish to view, please use Ctrl + F.
 
 当找不到希望浏览的题目时，请善用Ctrl + F进行搜索。
@@ -28,9 +32,9 @@ When you cannot find the problem you wish to view, please use Ctrl + F.
 |                                             [75. Sort Colors](/Solution/0075_Sort_Colors.md)                                             |                                                                |    Array, Two Pointer, Counting    |      Medium      |              |
 |              [121. Best Time to Buy and Sell Stock(买卖股票的最佳时机)](/Solution/0121_Best_Time_to_Buy_and_Sell_Stock.md)              | #1 Brute-force / 蛮力法<br />#2 One Pass Traverse / 一次遍历 |               Array               |    Easy / 简单    |      ✅      |
 |                                            [134. Gas Station](/Solution/0134_Gas_Station.md)                                            |                                                                |               Array               |      Medium      |              |
-|                                       [169. Majority Element](/Solution/0169_Majority_Element.md)                                       |                                                                |           Array, HashMap           |       Easy       |              |
+|                                  [169. Majority Element(多数元素)](/Solution/0169_Majority_Element.md)                                  |       #1 Counting / 计数法<br />⭐️ #2 Math / 数学法       |  Array, HashMap<br />数组，哈希表  |    Easy / 简单    |      ✅      |
 |                                     [217. Contains Duplicate](/Solution/0217_Contains_Duplicate.md)                                     |                                                                |              HashSet              |       Easy       |              |
-|                [238. Product of Array Except Self(除自身以外数组的乘积)](/Solution/0238_Product_of_Array_Except_Self.md)                |               Two Side Traverse / 分别从两端遍历               |          Array<br />数组          |   Medium / 中等   |      ✅      |
+|              [⭐️ 238. Product of Array Except Self(除自身以外数组的乘积)](/Solution/0238_Product_of_Array_Except_Self.md)              |               Two Side Traverse / 分别从两端遍历               |          Array<br />数组          |   Medium / 中等   |      ✅      |
 |                                          [252. Meeting Rooms](/Solution/0252_Meeting_Rooms.md)                                          |                                                                |              Sorting              |       Easy       |              |
 |                                      [278. First Bad Version](/Solution/0278_First_Bad_Version.md)                                      |                                                                |        Array, Binary Search        |       Easy       |              |
 |                              [973. K Closest Points to Origin](/Solution/0973_K_Close_Points_To_Origin.md)                              |                                                                |                                    |      Medium      |       -       |
