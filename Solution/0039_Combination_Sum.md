@@ -89,18 +89,16 @@ class Solution:
         def backtrack(target, index, path):
 
             if target == 0:
-		# Make sure we make a copy of path here, so later changes will not affect the ans. 
-                ans.append(copy.copy(path))
+                ans.append(path)
                 return
             elif target < 0:
                 return
-  
+        
             for i in range(index, len(candidates)):
-                path.append(candidates[i])
-                backtrack(target - candidates[i], i, path)
-                path.pop()
+                backtrack(target - candidates[i], i, path + [candidates[i]])
 
         backtrack(target, 0, [])
+
         return ans
 
 ```
