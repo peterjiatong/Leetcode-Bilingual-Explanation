@@ -12,7 +12,7 @@ When you cannot find the problem you wish to view, please use Ctrl + F.
 
 当找不到希望浏览的题目时，请善用Ctrl + F进行搜索。
 
-(This project was reformatted on January 2, 2024. If you find any missing problems, please contact me.）
+(This project was reformatted on January 2, 2024. If you find any missing problems, please contact me.)
 
 (此项目于2024年1月2日进行了重新排版。若发现题目遗漏，请与我联系。)
 
