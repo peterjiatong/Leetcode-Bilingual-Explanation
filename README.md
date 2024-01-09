@@ -4,9 +4,9 @@ This project aims to provide comprehensive bilingual (Chinese and English) analy
 
 本项目旨在提供力扣题目的中英文双语分析、解法、时间复杂度及答案。目前，我们提供Java和Python语言的代码。为保持代码简洁明了，代码注释将仅使用英文。
 
-Titles (or solutions) marked with a [⭐️](https://chat.openai.com/Solution/0238_Product_of_Array_Except_Self.md) indicate problems (or solutions) that the author finds particularly interesting and believes are important to understand.
+Titles (or solutions) marked with a ⭐️ indicate problems (or solutions) that the author finds particularly interesting and believes are important to understand.
 
-标题(或解法)前标有[⭐️](/Solution/0238_Product_of_Array_Except_Self.md)的题目是作者认为有比较有趣且需要掌握的题目(或解法)
+标题(或解法)前标有⭐️的题目是作者认为有比较有趣且需要掌握的题目(或解法)
 
 When you cannot find the problem you wish to view, please use Ctrl + F.
 
