@@ -60,9 +60,6 @@ class Solution:
 	map = {}
 	half = len(nums) / 2
         for num in nums:
-            if not num in map:
-                map[num] = 1
-            else:
                 map[num] += 1
   
             if map[num] > half:
@@ -101,6 +98,6 @@ Python:
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         nums.sort()
-        return nums[int(len(nums) / 2)]
+        return nums[len(nums) // 2]
 
 ```
