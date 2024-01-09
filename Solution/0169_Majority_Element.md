@@ -24,8 +24,6 @@ The time complexity of this method is `O(n)`.
 
 此方法时间复杂度为 `O(n)`
 
-
-
 Java:
 
 ```java
@@ -81,7 +79,6 @@ Since a sorting algorithm is used, the time complexity of this method is `O(n lo
 根据题目描述，已知本题有且只有一个解，又因其出现次数超过给定数组长度的一般，当我们对给定数组 `nums`排序后，出现在 `nums[nums.length / 2]`的数字一定就是答案
 
 因使用了排序算法，此方法的时间复杂度为 `O(n log n)`
-
 
 Java:
 
