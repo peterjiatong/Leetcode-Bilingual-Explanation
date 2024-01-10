@@ -2,7 +2,7 @@
 
 Leetcode: https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-中文力扣: 
+中文力扣: https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
 
 ## Description / 题目描述
 
