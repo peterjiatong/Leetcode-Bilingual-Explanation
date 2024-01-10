@@ -48,8 +48,6 @@ The time complexity of this algorithm is `O(n^t)`, where `t` is the number of le
 
 (picture above from leetcode solutions)
 
-
-
 Java:
 
 ```java
@@ -93,7 +91,7 @@ class Solution:
                 return
             elif target < 0:
                 return
-        
+      
             for i in range(index, len(candidates)):
                 backtrack(target - candidates[i], i, path + [candidates[i]])
 
