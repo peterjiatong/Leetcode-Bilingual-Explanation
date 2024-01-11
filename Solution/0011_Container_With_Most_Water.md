@@ -1,54 +1,38 @@
-# [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+# Container With Most Water / 盛最多水的容器
 
-[中文版本](/Solution_CN/0011_Container_With_Most_Water_CN.md)
+Leetcode: https://leetcode.com/problems/container-with-most-water
 
-## Solution 1: Brute Force(Time Limit Exceeded)
+中文力扣：https://leetcode.cn/problems/container-with-most-water
 
-This solution simply just compares every possible pair of the given array height, time complexity is `O(n^2)` because we put a loop inside of a loop, space complexity is `O(1)` since constant extra space is used.
+## Description / 题目描述
 
-Java:
+You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `ith` line are `(i, 0)` and `(i, height[i])`.
 
-```java
-class Solution {
-    public int maxArea(int[] height) {
-        int max = 0;
-        for (int i = 0; i < height.length - 1; i++){
-            for (int j = i + 1; j < height.length; j++){
-                int temp = Math.min(height[i], height[j]) * (j - i);
-                if (temp > max) max = temp;
-            }
-        }
-        return max;
-    }
-}
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
 
-// Tong
-```
+Return  *the maximum amount of water a container can store* .
 
-Python:
+**Notice** that you may not slant the container.
 
-```python
-class Solution:
-    def maxArea(self, height: List[int]) -> int:
-        max = 0
+给定一个长度为 `n` 的整数数组 `height` 。有 `n` 条垂线，第 `i` 条线的两个端点是 `(i, 0)` 和 `(i, height[i])` 。
 
-        for i in range(len(height) - 1):
-            for j in range(len(height)):
-                temp = min(height[i], height[j]) * (j - i)
-                if temp > max: max = temp
+找出其中的两条线，使得它们与 `x` 轴共同构成的容器可以容纳最多的水。
 
-        return max
+返回容器可以储存的最大水量。
 
-# Tong
-```
+ **说明：** 你不能倾斜容器。
 
-## Solution 2: Two Pointers
+## Solution: Two Pointers / 双指针
 
-We set up two pointers, left and right, initializing them to 0 and height.length -1, respectively. Since the area value is depends on the lower bound, to find the maximum area value between the left and right pointers, we should move the pointer with the lesser value. We stop when the left and right pointers overlap. If the left value equals the right value, then we can move either one, as the lower bound will not change.
+Using two pointers, `left` and `right`, to represent the left and right boundaries, respectively, because the amount of water that can be contained depends on the height of the shorter boundary. Therefore, the shorter one should be updated until the left and right boundaries converge.
 
-This solution has a time complexity of `O(n)` due to a single pass and a space complexity of `O(1)`.
+The time complexity of this algorithm is `O(n)`.
 
-Java:
+使用两个指针 `left`和 `right`，分别记录左右边界，因为桶中能装多少水取决去更短一侧的边界的高度，所以每次都应该更新较小一侧的边界，直至左右边界重合。
+
+此算法时间复杂度为`O(n)`
+
+Java
 
 ```java
 class Solution {
@@ -59,9 +43,7 @@ class Solution {
 
         while (left < right){
             int temp = Math.min(height[left], height[right]) * (right - left); # Count current area
-            if (temp > max) max = temp; // Update max
-
-	    // Update pointers
+            if (temp > max) max = temp;
             if (height[left] > height[right]){
                 right --;
             }else {
@@ -73,7 +55,6 @@ class Solution {
     }
 }
 
-// Tong
 ```
 
 Python:
@@ -86,15 +67,13 @@ class Solution:
         max = 0
 
         while left < right:
-            temp = min(height[left], height[right]) * (right - left) # Count current area
+            temp = min(height[left], height[right]) * (right - left)
             if temp > max: max = temp
-
-            if height[left] > height[right]: # Update pointers
+            if height[left] > height[right]:
                 right -= 1
             else:
                 left += 1
 
         return max
 
-# Tong
 ```
