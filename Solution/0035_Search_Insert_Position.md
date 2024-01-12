@@ -16,6 +16,20 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 ## Solution: Binary Search / 二分搜索
 
+When performing a binary search on the given array `nums`, there are three possible scenarios during the search:
+
+1. If `nums[mid] == target`, return `mid`.
+2. If `nums[mid] > target`, update `right = mid`.
+3. If `nums[mid] < target`, update `left = mid`.
+
+When `left + 1` is not less than `right` (when left and right are adjacent), end the search. At this point, neither `left` nor `right` has been checked:
+
+1. If `nums[left] >= target`, return `left`.
+2. If `nums[right] >= target`, return `right`.
+3. If none of the above conditions are met, it means that `target` is greater than `right`, so return `right + 1`.
+
+The time complexity of this algorithm is O(log n).
+
 对给定数组 `nums`进行二分搜索，搜索途中，有以下三种可能性：
 
 1. 若 `nums[mid] == target`, 返回 `mid`
