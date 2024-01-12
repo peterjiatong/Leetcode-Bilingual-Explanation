@@ -12,7 +12,7 @@ Given an integer array `nums`, return `true` if any value appears **at least twi
 
 ## Solution: HashSet / 哈希集
 
-Use a hash table to store the numbers that have seen. Then, iterate through the given array `nums`. If the current number has not appeared before (it does not exist in the hash set), store it in the hash set. If it has appeared before (it exists in the hash set), then return `true`.
+Use a hash table to store the numbers that we have seen. Then, iterate through the given array `nums`. If the current number has not appeared before (it does not exist in the hash set), store it in the hash set. If it has appeared before (it exists in the hash set), then return `true`.
 
 Since accessing an element in the hash set has a time cost of `O(1)`, the time complexity of this solution is `O(n)`.
 

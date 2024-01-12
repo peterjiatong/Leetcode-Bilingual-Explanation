@@ -22,9 +22,9 @@ Given two integer arrays `gas` and `cost`, return *the starting gas station's in
 
 Create two variables: `total` and `curr`, to keep track of the total amount of fuel that can be obtained during the journey and the total fuel that can be obtained from the last possible starting gas station, respectively.
 
-When the total amount of fuel `total` becomes negative, it's impossible to have a valid solution. 
+When the total amount of fuel `total` becomes negative after iterating all stations, it's impossible to have a valid solution.
 
-According to the question, if a solution exists, it is **guaranteed** to be **unique.** So, the first possible solution that can be found based on `curr` when `total` >0 will be the valid one.
+According to the question, if a solution exists, it is **guaranteed** to be **unique.** So, the first possible solution that can be found based on `curr` when `total > 0` will be the valid one.
 
 Iterate through all the gas stations, and when `curr` becomes negative, set the next gas station as the possible starting station and reset `curr`.
 
@@ -38,9 +38,9 @@ This solution only requires iterating through the array once, so the time comple
 
 根据题目，如果存在解，则 **保证** 它是 **唯一** 的，所以通过 `curr`能找到的第一个可能的解在满足 `total`大于0时，就一定是有效解
 
-遍历全部的加油站，当`curr`小于0时，设定下一个加油站为可能解，重置`curr`
+遍历全部的加油站，当 `curr`小于0时，设定下一个加油站为可能解，重置 `curr`
 
-结束遍历后，若`total`小于0，则返回-1
+结束遍历后，若 `total`小于0，则返回-1
 
 此解法只需要遍历数组一次，故时间复杂度为 `O(n)`
 
