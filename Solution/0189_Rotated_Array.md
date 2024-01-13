@@ -14,11 +14,11 @@ Given an integer array `nums`, rotate the array to the right by `k` steps, where
 
 We first calculate the effective rotation amount `k` by taking the remainder of `k` when divided by the array's length. And we can reverse all elements of the array first. And then reverse the first `k` element of the array. Last, we reverse the rest `n - k` elements in the array.
 
-The time complexity of this solution is `O(n)`
+The time complexity of this solution is `O(n)`.
 
 我们首先通过取 `k` 除以数组长度的余数来计算有效的旋转量 `k`。然后，我们先反转数组中的所有元素。接着反转数组的前 `k` 个元素。最后，我们反转数组中剩余的 `n - k` 个元素。
 
-此方法时间复杂度为 `O(n)`
+此方法时间复杂度为 `O(n)`。
 
 Java:
 
