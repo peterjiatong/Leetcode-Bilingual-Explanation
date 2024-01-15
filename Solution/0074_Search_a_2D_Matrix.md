@@ -32,9 +32,9 @@ This algorithm has a time complexity of `O(log (m*n))`, where `m` is the number 
 
 本题采用标准的二分搜索，只需要将一维的下标转换为二维的下标再做搜索即可:
 
-每次计算出mid的值后，将其转换为[mid / matrix[0].length][mid % matrix[0].length]后在进行二分搜索即可
+每次计算出`mid`的值后，将其转换为 `[mid / matrix[0].length][mid % matrix[0].length]`后在进行二分搜索即可
 
-此算法时间复杂度为O(log (m*n))， m为行数，n为列数
+此算法时间复杂度为 `O(log (m*n))`，`m`为行数，`n`为列数。
 
 Java
 
@@ -76,7 +76,7 @@ class Solution:
             mid = (left + right) // 2
             curRow = mid // cols
             curCol = mid % cols
-        
+      
             if matrix[curRow][curCol] == target:
                 return True
             elif matrix[curRow][curCol] > target:
