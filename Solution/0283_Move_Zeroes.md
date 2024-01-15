@@ -14,24 +14,37 @@ Given an integer array `nums`, move all `0`'s to the end of it while maintaining
 
 **请注意** ，必须在不复制数组的情况下原地对数组进行操作。
 
-## Solution 1: Pointer / 指针
+## Solution: Pointer / 指针
 
-We first create a pointer `count` to count the number of non-zero elements in the array. As we are iterating through the array, if we find a element that is non-zero, put it in the front of the array by using the count pointer. As we find more non-zero elements, simply put them into the "`count + 1`" th index. After iterating through `nums`, `count` will have the number of non-zero elements. We. can then add `n - count` number of 0's to the end of the array.
+First, we create a pointer `pivot` to count the number of non-zero elements in the array. While traversing the array, if we find a non-zero number, we update `nums[pivot]` to that number, then update `pivot += 1`. After traversing `nums`, update all numbers in `nums[pivot : -1]` to 0.
 
-Time complexity of this method is `O(n)`. However this method will write in 
+The time complexity of this method is `O(n)`.
 
-我们首先创建一个指针 `count` 来计算数组中非零元素的数量。在遍历数组时，如果我们找到一个非零元素，就使用 `count` 指针将其放到数组的前面。当我们找到更多非零元素时，简单地将它们放入 "`count + 1`" 个索引的位置。在遍历完 `nums` 之后，`count` 将会有非零元素的数量。然后，我们可以在数组的末尾添加 `n - count` 个 0。
+我们首先创建一个指针 `pivot` 来计算数组中非零元素的数量。在遍历数组时，如果我们找到一个非零数，就更新`nums[pivot]`为该数，然后更新`pivot += 1`。在遍历完 `nums` 之后，将`nums[pivot : -1]`中的所有数字更新为0即可
 
-这种方法的时间复杂度为 `O(n)`。然而这种方法将会在数组中进行 `n` 次写入操作。
+这种方法的时间复杂度为 `O(n)`。
 
 Java:
 
 ```Java
 class Solution {
     public void moveZeroes(int[] nums) {
-  
+        if (nums.length == 1) return;
+
+        int pivot = 0;
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] != 0){
+                nums[pivot] = nums[i];
+                pivot++;
+            }
+        }
+
+        for (int i = pivot; i < nums.length; i++){
+            nums[i] = 0;
+        }
     }
 }
+
 ```
 
 Python:
@@ -39,18 +52,14 @@ Python:
 ```python
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        count = 0
+        pivot = 0
         for i in nums:
             if i != 0:
-                nums[count] = i
-                count += 1
+                nums[pivot] = i
+                pivot += 1
   
-        while count < len(nums):
-            nums[count] = 0
+        while pivot < len(nums):
+            nums[pivot] = 0
             count += 1
-```
 
-## Solution 2: Two Pointers / 双指针
+```
