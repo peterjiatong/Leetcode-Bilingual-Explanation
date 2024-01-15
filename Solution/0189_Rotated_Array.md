@@ -12,13 +12,21 @@ Given an integer array `nums`, rotate the array to the right by `k` steps, where
 
 ## Solution 1: Reversing / 翻转法
 
-We first calculate the effective rotation amount `k` by taking the remainder of `k` when divided by the array's length. And we can reverse all elements of the array first. And then reverse the first `k` element of the array. Last, we reverse the rest `n - k` elements in the array.
+We first take the modulo of `k` with `n` to get an effective step count `k`. Then, we perform three reverse operations on the given array `nums`:
 
-The time complexity of this solution is `O(n)`.
+1. Reverse the entire array.
+2. Reverse the first `k` elements of the array.
+3. Finally, reverse the remaining elements of the array.
 
-我们首先通过取 `k` 除以数组长度的余数来计算有效的旋转量 `k`。然后，我们先反转数组中的所有元素。接着反转数组的前 `k` 个元素。最后，我们反转数组中剩余的 `n - k` 个元素。
+This approach has a time complexity of `O(n)`, because we do not use additional space, meeting the follow-up requirement of an in-place algorithm with `O(1)` space complexity.
 
-此方法时间复杂度为 `O(n)`。
+我们将k对n取模得到有效的步数k，之后我们对给定数组nums进行三次翻转：
+
+1. 先将整个数组翻转
+2. 接着翻转数组的前 `k` 个元素。
+3. 最后翻转数组中剩余的元素。
+
+此方法时间复杂度为 `O(n)`。因为我们并没有使用额外的空间，故满足进阶要求中的原地算法的`O(1)`空间复杂度要求
 
 Java:
 
