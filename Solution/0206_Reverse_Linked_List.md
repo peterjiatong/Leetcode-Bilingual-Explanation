@@ -12,15 +12,15 @@ Given the `head` of a singly linked list, reverse the list, and return  *the rev
 
 ## Solution 1: Dummy Node / 哑节点
 
-Use a dummy node `dummy `to solve this problem. Traverse the given linked list starting from `head`, for each node, first save the next node of the current node to avoid losing the node, then connect the `currNode.next` to ` dummy.next`, and update `dummy.next` to the `currNode`
+Use a dummy node `dummy `to solve this problem. Traverse the given linked list starting from `head`, for each node, first save the next node of the current node to avoid losing the node, then connect the `currNode.next` to ` dummy.next`, and update `dummy.next` to the `currNode`.
 
- After the traversal is completed, return `dummy.next`
+ After the traversal is completed, return `dummy.next`.
 
 The time complexity of this algorithm is `O(n)`.
 
 使用一个哑节点 `dummy`来解决此问题。从 `head`开始遍历给定链表，对于每个节点，首先保存当前节点的下一个节点，以避免丢失该节点，然后将 `currNode.next`连接到 `dummy.next`，并更新 `dummy.next`为 `currNode`。
 
-遍历完成后，返回 `dummy.next`
+遍历完成后，返回 `dummy.next`。
 
 此算法的时间复杂度为 `O(n)`。
 
@@ -70,17 +70,17 @@ class Solution:
 
 ## Solution 2: Three Pointers / 三指针
 
-Solution 2 uses three pointers `prev`, `cur`, and `next` to operate on the given linked list in place. `prev` is used to track the previous node, initialized as Null; `cur` is used to record the current node, initialized as `head`; `next` is used to record the next node, we can just initialize it as `cur.next`.
+Solution 2 uses three pointers `prev`, `cur`, and `next` to operate on the given linked list in place. `prev` is used to track the previous node, initialized as `Null`; `cur` is used to record the current node, initialized as `head`; `next` is used to record the next node, we can just initialize it as `cur.next`.
 
-Start traversing the given linked list from `head (cur)`. First, update the value of `next` to `cur.next`, then update `head.next` to `prev`, `prev` to `head`, and `head` to `next`. When the value of `cur` is Null, it means we have traversed the entire linked list, return `prev`.
+Start traversing the given linked list from `head(cur)`. First, update the value of `next` to `cur.next`, then update `head.next` to `prev`, `prev` to `head`, and `head` to `next`. When the value of `cur` is Null, it means we have traversed the entire linked list, return `prev`.
 
 The time complexity of this algorithm is `O(n)`.
 
-解法2使用三个指针 `prev，cur和next`对给定链表进行原地操作，`prev`用于记录之前的节点，初始化为Null; `cur`用于记录当前节点，初始化为 `head`;`next`用于记录下一个节点，初始化为 `cur.next`即可
+解法2使用三个指针 `prev，cur和next`对给定链表进行原地操作，`prev`用于记录之前的节点，初始化为 `Null`; `cur`用于记录当前节点，初始化为 `head`;`next`用于记录下一个节点，初始化为 `cur.next`即可。
 
-从 `head(cur)`开始遍历给定链表，先将 `next`的值更新为 `cur.next`，之后将 `head.next`更新为 `prev`，`prev`更新为 `head`，`head`更新为 `next`。当`cur`的值为Null时，证明我们已经遍历完整个链表，返回`prev`
+从 `head(cur)`开始遍历给定链表，先将 `next`的值更新为 `cur.next`，之后将 `head.next`更新为 `prev`，`prev`更新为 `head`，`head`更新为 `next`。当 `cur`的值为 `Null`时，证明我们已经遍历完整个链表，返回 `prev`。
 
-此算法时间复杂度为`O(n)`
+此算法时间复杂度为 `O(n)`。
 
 Java
 
@@ -136,7 +136,7 @@ After reaching the last nodeof the list, the following steps are performed at ea
 2. Disconnect the current node `cur` by setting its next pointer to null, i.e., `cur.next = Null`.
 3. Return the last node found in the original list.
 
-Once the recursion is complete, return the last node of the original linked list (which becomes the new head of the reversed list.)
+Once the recursion is complete, return the last node of the original linked list (which becomes the new head of the reversed list).
 
 This algorithm maintains a time complexity of `O(n)`.
 
@@ -144,13 +144,13 @@ This algorithm maintains a time complexity of `O(n)`.
 
 在找到最后一个节点后，每一层的递归步骤应为：
 
-1. 将当前节点 `cur`的下一个节点链接至当前节点，即 `cur.next.next = cur`
-2. 将当前节点 `cur`连接至空节点，即 `cur.next = Null`
-3. 返回之前找到的原列表中的最后一个节点
+1. 将当前节点 `cur`的下一个节点链接至当前节点，即 `cur.next.next = cur`。
+2. 将当前节点 `cur`连接至空节点，即 `cur.next = Null`。
+3. 返回之前找到的原列表中的最后一个节点。
 
-递归完成后，返回原列表中的最后一个节点(即当前的新头节点)
+递归完成后，返回原列表中的最后一个节点(即当前的新头节点)。
 
-此算法时间复杂度依旧为`O(n)`
+此算法时间复杂度依旧为 `O(n)`。
 
 Java
 
@@ -177,7 +177,7 @@ Python
             return head
   
         cur = head
-        newhead = self.reverseList(cur.next) // Finding the last node of the list
+        newhead = self.reverseList(cur.next) # Finding the last node of the list
         cur.next.next = head
         cur.next = None
         return newhead

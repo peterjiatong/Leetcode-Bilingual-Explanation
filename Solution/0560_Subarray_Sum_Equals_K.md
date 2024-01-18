@@ -22,11 +22,11 @@ With this setup, the sum of the subarray `nums[i : j]` should be `presum[j] - pr
 
 This algorithm has a time complexity of O(n^2), use python will exceeds the time limit constraints of LeetCode, and therefore is not recommended.
 
-使用一个比给定数组 `nums`的长度多1的数组 `presum`存储所以的前缀和，将 `presum[0]`初始化为0，之后遍历数组 `nums`，更新数组 `presum[i + 1] = presum[i] + nums[i]`
+使用一个比给定数组 `nums`的长度多1的数组 `presum`存储所以的前缀和，将 `presum[0]`初始化为0，之后遍历数组 `nums`，更新数组 `presum[i + 1] = presum[i] + nums[i]`。
 
 此时，子数组 `nums[i : j]`的和就应该是 `presum[j] - presum[i]`，我们只需使用嵌套的for循环，记录所有子数组的前缀和的差等于 `k`出现的次数。
 
-此算法时间复杂度为O(n^2)，使用python会超过leetcode的时间限制要求，故不推荐
+此算法时间复杂度为O(n^2)，使用python会超过leetcode的时间限制要求，故不推荐。
 
 Java
 
@@ -84,15 +84,15 @@ As you iterate through the array, if `presum` contains `sum - k`, then update `c
 
 The time complexity of this algorithm is `O(n)`.
 
-解法2和解法1的思路基本一致，只是使用的数据结构有所区别，本解法将使用哈希表
+解法2和解法1的思路基本一致，只是使用的数据结构有所区别，本解法将使用哈希表。
 
-首先创建一个用于储存前缀和及其出现次数的哈希表 `presum`；和一个整数count，用于记录满足条件的子数组的数量；以及一个整数`sum`，用于记录当前下标i的前缀和。
+首先创建一个用于储存前缀和及其出现次数的哈希表 `presum`；和一个整数count，用于记录满足条件的子数组的数量；以及一个整数 `sum`，用于记录当前下标i的前缀和。
 
-遍历数组时，若presum中含有sum - k, 更新 `count += presum.get(sum - k)`。之后将 `sum `添加至 `presum`中，若 `presum`中已经存在 `sum`，就将其的值 `+1`
+遍历数组时，若presum中含有sum - k, 更新 `count += presum.get(sum - k)`。之后将 `sum `添加至 `presum`中，若 `presum`中已经存在 `sum`，就将其的值 `+1`。
 
-(例如，数组[1, 2 , 3, -4, 2, 2]，其前缀和应为[1, 3, 6, 2, 6, 8], 若k = 2, 当下标处于5时，sum = 8，我们就应该在数组中寻找sum - k，也就是6出现的次数)
+(例如，数组[1, 2 , 3, -4, 2, 2]，其前缀和应为[1, 3, 6, 2, 6, 8], 若k = 2, 当下标处于5时，sum = 8，我们就应该在数组中寻找sum - k，也就是6出现的次数)。
 
-此算法的时间复杂度为`O(n)`
+此算法的时间复杂度为 `O(n)`。
 
 Java
 
