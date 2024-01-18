@@ -93,3 +93,47 @@ The time complexity of this algorithm is `O(n)`.
 (例如，数组[1, 2 , 3, -4, 2, 2]，其前缀和应为[1, 3, 6, 2, 6, 8], 若k = 2, 当下标处于5时，sum = 8，我们就应该在数组中寻找sum - k，也就是6出现的次数)
 
 此算法的时间复杂度为`O(n)`
+
+Java
+
+```Java
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        HashMap<Integer, Integer> presum = new HashMap<>();
+        int sum = 0;
+        int count = 0;
+        presum.put(0, 1);
+
+        for (int i = 0; i < nums.length; i++){
+            sum += nums[i];
+            if (presum.containsKey(sum - k)){
+                count += presum.get(sum - k);
+            }
+            presum.put(sum, presum.getOrDefault(sum, 0) + 1);
+        }
+
+        return count;
+    }
+}
+
+```
+
+Python
+
+```python
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        presum = {}
+        count = 0
+        sum = 0
+        presum[0] = 1
+
+        for i in range(len(nums)):
+            sum += nums[i]
+            if sum - k in presum:
+                count += presum[sum - k]
+            presum[sum] = presum.get(sum, 0) + 1
+  
+        return count
+
+```
