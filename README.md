@@ -8,6 +8,10 @@ Tags section for each problem includes the data structures and algorithms involv
 
 每道题的标签一栏中包含该题目及其解法中所涉及的数据结构和算法
 
+Titles marked with a 🔐 icon indicate that the problem requires a LeetCode Premium to access.
+
+标题后标有🔐的题目需要力扣会员才能访问
+
 Titles (or solutions) marked with a ⭐️ indicate problems (or solutions) that the author finds particularly interesting and believes are important to understand.
 
 标题(或解法)前标有⭐️的题目是作者认为有比较有趣且需要掌握的题目(或解法)
@@ -46,10 +50,11 @@ When you wish to search for a specific tag or difficulty, or cannot find the pro
 |                              [206. Reverse Linked List / 反转链表](/Solution/0206_Reverse_Linked_List.md)                              | #1 Dummy Node / 哑节点<br />#2 Three Pointers / 三指针<br />⭐️ #3 Solution 3: Recursion / 递归 |    Easy / 简单    |        ✅        |
 |                              [217. Contains Duplicate / 存在重复元素](/Solution/0217_Contains_Duplicate.md)                              |                                          HashSet / 哈希集                                          |    Easy / 简单    |        ✅        |
 |             [⭐️ 238. Product of Array Except Self / 除自身以外数组的乘积](/Solution/0238_Product_of_Array_Except_Self.md)             |                                 Two Side Traverse / 分别从两端遍历                                 |   Medium / 中等   |        ✅        |
-|                                     [252. Meeting Rooms / 会议室](/Solution/0252_Meeting_Rooms.md)                                     |                                          Sorting / 排序法                                          |    Easy / 简单    |        ✅        |
+|                                   [252. Meeting Rooms / 会议室](/Solution/0252_Meeting_Rooms.md) 🔐                                   |                                          Sorting / 排序法                                          |    Easy / 简单    |        ✅        |
+|                               [253. Meeting Rooms II / 会议室 II](/Solution/0253_Meeting_Rooms_II.md) 🔐                               |                                 Solution: PriorityQueue / 优先队列                                 |   Medium / 中等   |        -        |
 |                                      [278. First Bad Version](/Solution/0278_First_Bad_Version.md)                                      |                                                                                                    |       Easy       |                  |
 |                                        [283. Move Zeroes / 移动零](/Solution/0283_Move_Zeroes.md)                                        |                                           Pointer / 指针                                           |    Easy / 简单    |        ✅        |
 |                                 [525. Contiguous Array / 连续数组](/Solution/0525_Contiguous_Array.md)                                 |                                          Hashmap / 哈希表                                          |   Medium / 中等   |        ✅        |
 |                         [560. Subarray Sum Equals K / 和为 K 的子数组](/Solution/0560_Subarray_Sum_Equals_K.md)                         |                          #1 Prefix Sum / 前缀和<br />#2 Hashmap / 哈希表                          |   Medium / 中等   |        ✅        |
-|                             [759. Employee Free Time / 员工空闲时间](/Solution/0759_Employee_Free_Time.md)                             |                                           Sorting / 排序                                           |    Hard / 困难    |        -        |
+|                           [759. Employee Free Time / 员工空闲时间](/Solution/0759_Employee_Free_Time.md) 🔐                           |                                           Sorting / 排序                                           |    Hard / 困难    |        -        |
 |                              [973. K Closest Points to Origin](/Solution/0973_K_Close_Points_To_Origin.md)                              |                                                                                                    |      Medium      |                  |
