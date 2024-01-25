@@ -2,7 +2,7 @@
 
 Leetcode: https://leetcode.com/problems/employee-free-time/
 
-中文力扣：https://leetcode.com/problems/employee-free-time/
+中文力扣: https://leetcode.cn/problems/employee-free-time/
 
 ## Description / 题目描述
 

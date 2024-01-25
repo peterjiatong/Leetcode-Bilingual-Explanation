@@ -2,7 +2,7 @@
 
 Leetcode: https://leetcode.com/problems/meeting-rooms-ii/
 
-中文力扣：https://leetcode.cn/problems/meeting-rooms-ii/
+中文力扣: https://leetcode.cn/problems/meeting-rooms-ii/
 
 ## Description / 题目描述
 
@@ -21,14 +21,14 @@ Iterate through the given array `intervals`:
 
 After the iteration, return the length of `pq`. The time complexity of this algorithm is `O(n log n)` due to the use of a sorting algorithm.
 
-先对给定数组`intervals`排序，排序时优先比较区间中的第一个数。排序完成后，创建一个优先队列`pq`由于记录每个区间的结束时间(由于使用优先队列，`pq`中的数会默认为升序排列)。
+先对给定数组 `intervals`排序，排序时优先比较区间中的第一个数。排序完成后，创建一个优先队列 `pq`由于记录每个区间的结束时间(由于使用优先队列，`pq`中的数会默认为升序排列)。
 
-遍历给定数组`intervals`：
+遍历给定数组 `intervals`：
 
-1. 若当前区间的开始时间小于`pq`中的最小的结束时间，则表明我们需要一个新的会议室，将当前区间的结束时间加入`pq`
-2. 反之，证明当前区间的不需要一个新的会议室(当前区间可以使用上一个已经完成的区间使用的会议室)，将`pq`中的最小的结束时间移除队列，将当前区间的结束时间加入`pq`
+1. 若当前区间的开始时间小于 `pq`中的最小的结束时间，则表明我们需要一个新的会议室，将当前区间的结束时间加入 `pq`
+2. 反之，证明当前区间的不需要一个新的会议室(当前区间可以使用上一个已经完成的区间使用的会议室)，将 `pq`中的最小的结束时间移除队列，将当前区间的结束时间加入 `pq`
 
-遍历完成后，返回`pq`的长度即可，此算法时间复杂度为`O(n log n)`， 因为使用了排序算法。
+遍历完成后，返回 `pq`的长度即可，此算法时间复杂度为 `O(n log n)`， 因为使用了排序算法。
 
 Java
 
