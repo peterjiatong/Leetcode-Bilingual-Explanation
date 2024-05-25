@@ -24,13 +24,17 @@ Return  *the maximum amount of water a container can store* .
 
 ## Solution: Two Pointers / 双指针
 
-Using two pointers, `left` and `right`, to represent the left and right boundaries, respectively, because the amount of water that can be contained depends on the height of the shorter boundary. Therefore, the shorter one should be updated until the left and right boundaries converge.
+The amount of water a container can hold depends on the height of the shorter side of the boundary, so each time, we should update the boundary of the shorter side until the left and right boundaries meet.
 
-The time complexity of this algorithm is `O(n)`.
+Using two pointers `left` and `right` to record the left and right boundaries, respectively, if the current height of the left and right boundaries can store the maximum amount of water, record it.
 
-使用两个指针 `left`和 `right`，分别记录左右边界，因为桶中能装多少水取决去更短一侧的边界的高度，所以每次都应该更新较小一侧的边界，直至左右边界重合。
+This algorithm has a time complexity of `O(n)`.
 
-此算法时间复杂度为`O(n)`
+桶中能装多少水取决于更短一侧的边界的高度，所以每次都应该更新较小一侧的边界，直至左右边界重合
+
+使用两个指针 `left`和 `right`，分别记录左右边界，如果当前左右边界的高度可以储存最大水量，将其记录下来
+
+此算法时间复杂度为 `O(n)`
 
 Java
 

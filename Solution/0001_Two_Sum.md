@@ -4,7 +4,6 @@ Leetcode: https://leetcode.com/problems/two-sum/
 
 中文力扣: https://leetcode.cn/problems/two-sum/
 
-
 ## Description / 题目描述
 
 Given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`* .
@@ -19,18 +18,15 @@ You can return the answer in any order.
 
 你可以按任意顺序返回答案。
 
-
 ## Solution 1: Brute-force / 蛮力法
 
-The simplest solution is to use nested for loops. The outer loop iterates through all elements, while the inner loop iterates from the next index of the current element in the outer loop to the last element, checking if the sum of any two elements equals `target`
+The brute force solution uses a nested loop to loop over each element `x` in the given array `nums`, and to check if there is another element `y` exists such that `x + y = target`
 
-This approach has a O(n^2) time Complexity
+This approach has a time complexity of `O(n^2)`
 
-最简单的解法是使用for循环的嵌套，外层循环遍历所有元素，而内层循环从外层当前元素的下一个元素遍历到最后一个元素，依次检查两个元素之和是否等于 `target`
+蛮力法使用for循环的嵌套来遍历给定数组 `nums` 中的每个元素 `x`，并检查是否存在另一个元素 `y` 使得 `x + y = target`
 
 此解法时间复杂度为 `O(n^2)`
-
-
 
 Java
 
@@ -63,25 +59,23 @@ class Solution:
         return [] # In case no solution found
 ```
 
-
 ## **Solution 2: Hash-Map / 哈希表**
 
-Utilizing a hash-map for solving the problem is a more sophisticated approach, as accessing a hash-map has a time complexity of `O(1)`, significantly reducing the execution time of the code.
+Using a hash table can significantly reduce the runtime because accessing elements in a hash-map has a time cost of `O(1)`.
 
-We use a hash-map to store pairs of `(target - num[i], i)`, where `i` is the index of the elements in the array.
+Using a hash-map to store the difference between `target` and the current element `nums[i]`, along with the index of the current element, or (`target` - `nums[i]`, `i`).
 
-When iterating through the array `nums`, if we find that `target - num[i]` is already in the hash-map, we have found our solution (i.e. the current index `i` and the value of `target - num[i]` in the hash table). Otherwise, we put `(target - num[i], i)` in the hash-map.
+Then we traverse the array `nums` and check if the current element is already in the hash table. If it exists, it means we have found the answer (i.e., the index of the current element `i` and the value of the current element in the hash table). Otherwise, we store (`target` - `nums[i]`, `i`) in the hash table.
 
-This approach has a time complexity of `O(n)`.
+The time complexity of this solution is `O(n)`.
 
-使用哈希表解题是更加精妙的方法，因为访问哈希表是时间消耗为 `O(1)`，可以显著减少代码运行时间
+使用哈希表可以显著减少代码运行时间，因为在哈希表中访问元素的时间成本为`O(1)`
 
-我们使用一个哈希表用于存放（`target` - `num[i]`, `i`), `i` 为元素的下标
+创建一个哈希表用于存放 `target`与当前元素 `nums[i]`的差和当前元素的下标，即（`target` - `num[i]`, `i`)
 
-对数组nums进行一次遍历，若发现 `target` - `num[i]` 已在哈希表中，则我们找到了答案 (即当前坐标i 和 哈希表中 `target `- `num[i]`的值)，反之，则将(`target` - `num[i]`,` i`) 存入哈希表中
+之后对数组 `nums`进行遍历，检查当前元素是否已在哈希表中，如果存在，表明我们找到了答案 (即当前元素的下标 `i`和哈希表中存在的当前元素的值)，反之，则将(`target` - `num[i]`,` i`) 存入哈希表中
 
 此解法时间复杂度为O(n)
-
 
 Java:
 
