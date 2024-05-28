@@ -20,7 +20,7 @@ Return  *the maximum amount of water a container can store* .
 
 返回容器可以储存的最大水量。
 
- **说明：** 你不能倾斜容器。
+**说明：** 你不能倾斜容器。
 
 ## Solution: Two Pointers / 双指针
 
@@ -36,7 +36,7 @@ This algorithm has a time complexity of `O(n)`.
 
 此算法时间复杂度为 `O(n)`
 
-Java
+Java:
 
 ```java
 class Solution {
