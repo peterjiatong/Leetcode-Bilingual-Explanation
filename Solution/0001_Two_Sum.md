@@ -18,6 +18,13 @@ You can return the answer in any order.
 
 你可以按任意顺序返回答案。
 
+## Constraints **/ 提示**
+
+* `2 <= nums.length <= 10^4`
+* `-10^9 <= nums[i] <= 10^9`
+* `-10^9 <= target <= 10^9`
+* **Only one valid answer exists. / 只会存在一个有效答案**
+
 ## Solution 1: Brute-force / 蛮力法
 
 The brute force solution uses a nested loop to loop over each element `x` in the given array `nums`, and to check if there is another element `y` exists such that `x + y = target`
@@ -47,7 +54,7 @@ class Solution {
 
 ```
 
-Python:
+Python
 
 ```python
 class Solution:
@@ -69,7 +76,7 @@ Then we traverse the array `nums` and check if the current element is already in
 
 The time complexity of this solution is `O(n)`.
 
-使用哈希表可以显著减少代码运行时间，因为在哈希表中访问元素的时间成本为`O(1)`
+使用哈希表可以显著减少代码运行时间，因为在哈希表中访问元素的时间成本为 `O(1)`
 
 创建一个哈希表用于存放 `target`与当前元素 `nums[i]`的差和当前元素的下标，即（`target` - `num[i]`, `i`)
 
@@ -77,7 +84,7 @@ The time complexity of this solution is `O(n)`.
 
 此解法时间复杂度为O(n)
 
-Java:
+Java
 
 ```java
 class Solution {
@@ -96,7 +103,7 @@ class Solution {
 
 ```
 
-Python:
+Python
 
 ```python
 class Solution:

@@ -22,41 +22,49 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 你必须设计一个时间复杂度为 `O(log n)` 的算法解决此问题。
 
+## Constraints **/ 提示**
+
+* `1 <= nums.length <= 5000`
+* `-10^4 <= nums[i] <= 10^4`
+* All values of `nums` are  **unique**. / `nums` 中的每个值都 **独一无二**
+* `nums` is an ascending array that is possibly rotated. / 题目数据保证 `nums` 在预先未知的某个下标上进行了旋转
+* `-10^4<= target <= 10^4`
+
 ## **Solution 1: Binary Search / 二分搜索**
 
-This problem will use a modified binary search, as the given array is sorted and then rotated at an unknown point. Thus, for any index, one side of it must be ordered, and the other side maybe disordered.
+The problem involves a given ascending array that has been rotated once at an unknown position.  which on either side of any element, one side must be sorted, while the other side **may be** unsorted. This means that even if we find the middle value of the current array, we cannot determine which boundary to update by simply comparing the `target` value with the middle value.
 
-During the binary search process, we may encounter several cases:
+Therefore, we will use a variant of binary search. Since we cannot determine if `target` is in the possibly unsorted segment, we must check if `target` is in the sorted segment each time when we need to update the left or right boundary.
 
-1. `nums[mid] == target`: The answer is found, return `mid`.
-2. If `nums[left] < nums[mid]`: This indicates the interval `[left, mid]` is sorted, while the interval `[mid, right]` is disordered (e.g., `[3, 4, 5, 1, 2]`).
-   1. If `nums[left] <= target < nums[mid]`, it means the target is in the sorted interval, so we update `right = mid - 1`.
-   2. Otherwise, the target is in the disordered interval, so we update `left = mid + 1`.
-3. If `nums[left] > nums[mid]`: This indicates the interval `[left, mid]` is disordered, while the interval `[mid, right]` is sorted (e.g., `[4, 5, 1, 2, 3]`).
-   1. If `nums[mid] < target <= nums[right]`, it means the target is in the sorted interval, so we update `left = mid + 1`.
-   2. Otherwise, the target is in the disordered interval, so we update `right = mid - 1`.
+During the binary search, we may encounter several situations:
 
-note that this solution also works on any sorted list.
+1. `nums[mid] == target`: If the middle element is the target, return `mid`.
+2. If `nums[left] < nums[mid]`: It means the `[left, mid]` segment is sorted, while the `[mid, right]` segment **may be** unsorted (e.g., `[3, 4, 5, 1, 2]`).
+   1. If `nums[left] < target < nums[mid]`, it means `target` is in the sorted segment, so update `right = mid - 1`.
+   2. Otherwise, it means `target` is in the other segment, so update `left = mid + 1`.
+3. If `nums[left] > nums[mid]`: It means the `[left, mid]` segment is unsorted, while the `[mid, right]` segment **may be** sorted (e.g., `[4, 5, 1, 2, 3]`).
+   1. If `nums[mid] < target < nums[right]`, it means `target` is in the sorted segment, so update `left = mid + 1`.
+   2. Otherwise, it means `target` is in the other segment, so update `right = mid - 1`.
 
-The time complexity of this algorithm is `O(log n)`.
+This solution can also handle a normally sorted array. The time complexity of this algorithm is `O(log n)`.
 
-本题将使用一个变种二分搜索，因为本题将给定升序数组在未知的位置旋转了一次，所以在任意元素的左边或右边必然有一边是排序好的，而另一边也许是被打乱顺序的。
+本题将给定升序数组在未知的位置旋转了一次，说明在任意元素的左边或右边必然有一边是排序好的，而另一边**也许**是被打乱顺序的，也就是说，即便我们找到当前数组的中间位置的值，也无法仅仅通过比较 `target`的值和中间位置的值来确认应该更新哪一个边界
 
-在二分搜索的过程中，可能会遇到几种情况：
+因此我们将使用一个二分搜索的变种，因为我们无法判断 `target`是否存在于**有可能是**乱序的区间，所以每次在需要更新左右边界时，我们要提前判断 `target`是否存在于有序的区间
+
+ 在二分搜索的过程中，可能会遇到几种情况：
 
 1. `nums[mid] == target`: 找到答案，返回 `mid`
-2. 若`nums[left] < nums[mid]`: 则说明`[left, mid]`这个区间是升序的，而`[mid, right]`的区间是乱序的(如`[3, 4, 5, 1, 2]`)
+2. 若 `nums[left] < nums[mid]`: 则说明 `[left, mid]`这个区间是升序的，而 `[mid, right]`的区间**有可能是**乱序的(如 `[3, 4, 5, 1, 2]`)
 
-   1. 此时，若`nums[left] < target < nums[mid]`, 则说明`target`在升序区间，更新`right = mid - 1`
-   2. 反之，说明`target`在无序区间，更新`left = mid + 1`
-3. 若`nums[left] > nums[mid]`: 则说明`[left, mid]`这个区间是乱序的，而`[mid, right]`的区间是升序的(如`[4, 5, 1, 2, 3]`)
+   1. 此时，若 `nums[left] < target < nums[mid]`, 则说明 `target`在升序区间，更新 `right = mid - 1`
+   2. 反之，说明 `target`在另一边，更新 `left = mid + 1`
+3. 若 `nums[left] > nums[mid]`: 则说明 `[left, mid]`这个区间是乱序的，而 `[mid, right]`的区间**有可能是**升序的(如 `[4, 5, 1, 2, 3]`)
 
-   1. 此时，若`nums[mid] < target < nums[right]`, 则说明`target`在升序区间，更新`left = mid + 1`
-   2. 反之，说明`target`在无序区间，更新`right = mid + 1`
+   1. 此时，若 `nums[mid] < target < nums[right]`, 则说明 `target`在升序区间，更新 `left = mid + 1`
+   2. 反之，说明 `target`在另一边，更新 `right = mid + 1`
 
-本解法在排序好的数组中也能求解
-
-此算法时间复杂度为 `O(log n)`
+本解法在排序好的数组中也能求解， 此算法时间复杂度为 `O(log n)`
 
 Java
 
@@ -74,7 +82,7 @@ class Solution {
                 else left = mid + 1;
             }else { // [mid, right] is sorted
                 if (nums[mid] < target && target <= nums[right]) left = mid + 1;
-                else right = mid - 1;      
+                else right = mid - 1;    
             }
         }
         return -1;
@@ -96,8 +104,7 @@ class Solution:
 
             if nums[mid] == target:
                 return mid
-
-            if nums[left] <= nums[mid]: # [left, mid] is sorted
+            elif nums[left] <= nums[mid]: # [left, mid] is sorted
                 if nums[left] <= target < nums[mid]:
                     right = mid - 1
                 else:
@@ -114,31 +121,31 @@ class Solution:
 
 ## Solution 2: Find Pivot + Binary Search / 找轴点 + 二分搜索
 
-This solution is simpler and more straightforward compared to Solution 1. First, we use binary search to find the pivot point, which is the index where the array was rotated:
+The problem involves a given ascending array that has been rotated once at an unknown position. If the rotated array is not already in ascending order (i.e., rotated at index 0, meaning the array remains unchanged), there must exist a pivot point `p` such that the value of pivot point is greater than the value of its neighbors (`nums[p-1] < nums[p] > nums[p+1]`). This means the segment `[0, p - 1]` is sorted in ascending order, and the segment `[p, nums.length - 1]` is also sorted in ascending order, with `nums[p] < nums[0]`.
 
-1. When `nums[mid] > nums[-1]`: update `left = mid + 1`.
+First, we use binary search to find the pivot point. while the left boundary does not exceed the right boundary (left <= right):
+
+1. If `nums[mid] > nums[-1]`, update `left = mid + 1`.
 2. Otherwise, update `right = mid - 1`.
 
-After this step, `nums[left]` will be the pivot point. Thus, `[0, left - 1]` is in ascending order and `[left, nums.length - 1]` is also in ascending order, and with the fact `nums[left] < nums[0]`.
+After the binary search, `left` will be the pivot point (note that if `left = 0` at this point, it means `nums` itself is in ascending order, so we can proceed with a normal binary search).
 
-Note that if `left = 0`, it implies that `nums` is already sorted in ascending order, and a regular binary search can be performed directly.
+Next, compare `target` with `nums[0]`. If `nums[0] > target`, we perform binary search in the segment `[left, nums.length - 1]` (since `nums[p]` must be less than `nums[0]`). If `nums[0] < target`, we perform binary search in the segment `[0, left - 1]`.
 
-Next, compare the `target` with `nums[0]`. If `nums[0] > target`, perform binary search within the interval `[left, nums.length - 1]`. If `nums[0] < target`, binary search should be performed within the interval `[0, left - 1]`.
+The time complexity of this algorithm is also `O(log n)`. However, since this algorithm uses two binary searches, it must be slower than the previous solution.
 
-The time complexity of this algorithm is also `O(log n)`, but since this method uses two binary searches, it is certainly slower than Solution 1 (2 * `O(log n)`).
+本题将给定升序数组在未知的位置旋转了一次，说明旋转过的数组若非本身就是升序(在下标0处旋转，即数组没有变化)，就一定存在一个轴点 `p`，满足轴点的值大于轴点左右两边的值(`nums[p-1] < nums[p] > num[p+1]`)，即 `[0, p - 1]`是升序的，`[p, nums.length - 1]`也是升序的，且 `nums[p] < nums[0]`
 
-此解法相较于解法1更加简单直接，首先用二分搜索找到轴点，即数组旋转的下标：
+首先用二分搜索找到轴点，当左右边界没有越过时(left <= right)：
 
 1. 当 `nums[mid] > nums[-1]`时：更新 `left = mid + 1`
 2. 反之，更新 `right = mid - 1`
 
-此步骤完成后，`nums[left]`就是轴点，即 `[0, left - 1]`是升序的，`[left, nums.length - 1]`也是升序的，且 `nums[left] < nums[0]`
+二分搜索后， `left`就是我们要找的轴点(需要注意的是，若此时 `left = 0`， 证明 `nums`本身就是升序的，直接进行正常的二分搜索即可)
 
-需要注意的是，若此时 `left = 0`， 证明 `nums`本身就是升序的，直接进行正常的二分搜索即可
+之后，比较 `target`和 `nums[0]`的值，如果 `nums[0] > target`, 我们就在 `[left, nums.length - 1]`这个区间进行二分搜索(因为 `nums[p]` 一定小于 `nums[0]`)，如果 `nums[0] < target`，则需要在 `[0, left - 1]`这个区间进行二分搜索。
 
-之后，比较 `target`和 `nums[0]`的值，若 `nums[0] > target`, 我们就在 `[left, nums.length - 1]`这个区间进行二分搜索，若`nums[0] < target`，则需要在 `[0, left - 1]`这个区间进行二分搜索。
-
-此算法的时间复杂度同为O(log n), 但此算法使用了两个二分搜索，所以一定比解法一慢(2 * O(log n))
+此算法的时间复杂度同为 `O(log n)`, 但此算法使用了两个二分搜索，所以一定比上一个解法慢
 
 Java
 
@@ -202,7 +209,7 @@ class Solution:
         else:
             right = left - 1
             left = 0
-        
+      
         while left <= right:
             mid = left + (right - left)
             if nums[mid] == target:
@@ -213,5 +220,5 @@ class Solution:
                 left = mid + 1
 
         return -1
-          
+        
 ```

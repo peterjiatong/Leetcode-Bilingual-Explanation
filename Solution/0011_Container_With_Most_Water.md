@@ -22,6 +22,12 @@ Return  *the maximum amount of water a container can store* .
 
 **说明：** 你不能倾斜容器。
 
+## Constraints **/ 提示**
+
+* `n == height.length`
+* `2 <= n <= 10^5`
+* `0 <= height[i] <= 10^4`
+
 ## Solution: Two Pointers / 双指针
 
 The amount of water a container can hold depends on the height of the shorter side of the boundary, so each time, we should update the boundary of the shorter side until the left and right boundaries meet.
@@ -36,7 +42,7 @@ This algorithm has a time complexity of `O(n)`.
 
 此算法时间复杂度为 `O(n)`
 
-Java:
+Java
 
 ```java
 class Solution {
@@ -61,7 +67,7 @@ class Solution {
 
 ```
 
-Python:
+Python
 
 ```python
 class Solution:
