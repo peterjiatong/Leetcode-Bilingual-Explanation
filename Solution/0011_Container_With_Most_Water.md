@@ -10,7 +10,7 @@ You are given an integer array `height` of length `n`. There are `n` vertical li
 
 Find two lines that together with the x-axis form a container, such that the container contains the most water.
 
-Return  *the maximum amount of water a container can store* .
+Return _the maximum amount of water a container can store_ .
 
 **Notice** that you may not slant the container.
 
@@ -24,15 +24,15 @@ Return  *the maximum amount of water a container can store* .
 
 ## Constraints **/ 提示**
 
-* `n == height.length`
-* `2 <= n <= 10^5`
-* `0 <= height[i] <= 10^4`
+- `n == height.length`
+- `2 <= n <= 10^5`
+- `0 <= height[i] <= 10^4`
 
 ## Solution: Two Pointers / 双指针
 
-The amount of water a container can hold depends on the height of the shorter side of the boundary, so each time, we should update the boundary of the shorter side until the left and right boundaries meet.
+The amount of water a container can hold depends on the height of the shorter side. So, each time, we should update the shorter boundary until the left and right boundaries meet.
 
-Using two pointers `left` and `right` to record the left and right boundaries, respectively, if the current height of the left and right boundaries can store the maximum amount of water, record it.
+Using two pointers `left` and `right` to record the left and right boundaries, respectively. If the container formed by the current left and right boundaries can store more water than the maximum amount of water found, record it.
 
 This algorithm has a time complexity of `O(n)`.
 
@@ -60,7 +60,7 @@ class Solution {
                 left ++;
             }
         }
-  
+
         return max;
     }
 }
