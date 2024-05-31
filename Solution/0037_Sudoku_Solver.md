@@ -8,7 +8,7 @@ Leetcode: https://leetcode.com/problems/sudoku-solver
 
 Write a program to solve a Sudoku puzzle by filling the empty cells.
 
-A sudoku solution must satisfy  **all of the following rules** :
+A sudoku solution must satisfy **all of the following rules** :
 
 1. Each of the digits `1-9` must occur exactly once in each row.
 2. Each of the digits `1-9` must occur exactly once in each column.
@@ -28,20 +28,20 @@ The `'.'` character indicates empty cells.
 
 ## Constraints **/ 提示**
 
-* `board.length == 9`
-* `board[i].length == 9`
-* `board[i][j]` is a digit or `'.'`. / `board[i][j]` 是一位数字或者 `'.'`
-* It is **guaranteed** that the input board has only one solution. / 题目数据 **保证** 输入数独仅有一个解
+- `board.length == 9`
+- `board[i].length == 9`
+- `board[i][j]` is a digit or `'.'`. / `board[i][j]` 是一位数字或者 `'.'`
+- It is **guaranteed** that the input board has only one solution. / 题目数据 **保证** 输入数独仅有一个解
 
 ## Solution: PreProcessing + DFS / 预处理 + 深度优先搜索
 
-Use an integer 2D matrix `intBoard`, convert the characters in the given `board` array into integers for further processing.
+Use a 2D integer matrix `intBoard`, convert the characters in the given `board` array into integers for simplification.
 
-Use three boolean 2D matrices: `rowPossibleNums`, `colPossibleNums`, and `blockPossibleNums` to record the available numbers in each row, each column, and each 3x3 block respectively (the index of the block is calculated by `(row / 3) * 3 + (col / 3)`). `false` means available, `true` means occupied. For example, `rowPossibleNums[2][3] == true` means that the number 4 has already appeared in the third row.
+Use three boolean 2D matrices: `rowPossibleNums`, `colPossibleNums`, and `blockPossibleNums` to record the available numbers in each row, each column, and each 3x3 block respectively (the index of the block is calculated by `(row / 3) * 3 + (col / 3)`). `false` means a number is still available, and `true` means a number is already taken. For example, `rowPossibleNums[2][3] == true` means that the number 4 has already been used in the third row.
 
 First, preprocess the given 2D matrix `board`. If the current cell `[i][j]` contains a digit, set that digit to `intBoard[i][j]` and set the corresponding positions in `rowPossibleNums`, `colPossibleNums`, and `blockPossibleNums` to `true`. Otherwise (if the current cell `[i][j]` contains a '.'), set `intBoard[i][j]` to `-1`.
 
-The problem statement ensures that there is exactly one solution. Therefore, we can first identify answers that do not require DFS. Traverse `intBoard`, and if any cell `intBoard[i][j]` has any integer `k` (0 <= k < 9) satisfying `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]` and there is exactly one such integer `k`, it means we have found an answer that does not require DFS. Every time an answer is found, repeat the above traversal until no more answers can be found without DFS.
+To reduce the recursion depth of the DFS, we can first identify answers that do not require DFS. Traverse `intBoard`, and if any cell `intBoard[i][j]` has an integer `k` (0 <= k < 9) satisfying `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]` and there is exactly one such integer `k`, it means we have found an answer that does not require DFS. We can directly put the number `k + 1` into `intBoard[i][j]` and update `rowPossibleNums`, `colPossibleNums`, and `blockPossibleNums` correspondingly. If there is at least one such cell found in an iteration, repeat the above traversal until no more answers can be found without DFS.
 
 Then use DFS for searching. For each cell with a value of `-1`, try to fill in a possible number and proceed with recursion (the possible numbers for the current cell `intBoard[i][j]` are those satisfying `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]` where 0 <= k < 9). If any cell's value is `-1` and there are no possible numbers to fill in, backtrack to the previous cell with a filled number and continue trying the next possible number.
 
@@ -49,23 +49,23 @@ Finally, convert the integers in `intBoard` back to characters and fill them int
 
 The time complexity of this algorithm is `O((n!)^n)`, where `n=9` in this problem. It is worth noting that due to the preprocessing step, the actual time complexity is often significantly better than `O((n!)^n)`.
 
-*Based on the principles of modular programming, we can store the value 9 in a global variable.
+\*Based on the principles of modular programming, we can store the value 9 in a global variable.
 
 创建一个整数的二维矩阵 `intBoard`，将既定数组 `board` 中的字符转换为整数，以便后续处理。
 
-创建三个布尔值的二维矩阵 `rowPossibleNums`，`colPossibleNums`，`blockPossibleNums`，分别用于记录每一行，每一列，和每一个3x3的方格中可用的数字（方格的下标为从左到右，从上到下，判断当前元素处于哪个方格的计算方法为 `(row / 3) * 3 + (col / 3)`）。`false` 代表可用，`true` 代表已经被占用，例如 `rowPossibleNums[2][3] == true` 代表第三行中数字4已经出现过。
+创建三个布尔值的二维矩阵 `rowPossibleNums`，`colPossibleNums`，`blockPossibleNums`，分别用于记录每一行，每一列，和每一个 3x3 的方格中可用的数字（方格的下标为从左到右，从上到下，判断当前元素处于哪个方格的计算方法为 `(row / 3) * 3 + (col / 3)`）。`false` 代表可用，`true` 代表已经被占用，例如 `rowPossibleNums[2][3] == true` 代表第三行中数字 4 已经出现过。
 
 首先对给定二维矩阵 `board` 进行预处理，如果当前单元格的元素 `[i][j]` 是一个整数，则将该数字填入 `intBoard[i][j]`，同时将 `rowPossibleNums`，`colPossibleNums`，`blockPossibleNums` 中对应位置的值变为 `true`。反之（当前单元格的元素 `[i][j]` 是 '.'），则将 `intBoard[i][j]` 的值设为 `-1`。
 
-题目中明确表示本题有且只有一个答案，所以我们可以先将不需要DFS搜索就能找到的答案确定。对 `intBoard` 进行遍历，如果当前单元格的元素 `intBoard[i][j]` 有任何整数 `k` (0 <= k < 9）满足条件 `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]`且满足条件的整数 `k` 有且只有一个时，就代表我们找到了一个不需要DFS搜索就能找到的答案。每当一个答案被找出，我们就应该重复上述遍历，直至找不到任何不需要DFS搜索就能找到的答案。
+为了减少 DFS 的深度，我们可以先将不需要 DFS 搜索就能找到的答案确定。对 `intBoard` 进行遍历，如果当前单元格的元素 `intBoard[i][j]` 有任何整数 `k` (0 <= k < 9）满足条件 `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]`且满足条件的整数 `k` 有且只有一个时，就代表我们找到了一个不需要 DFS 搜索就能找到的答案，我们可以直接将数字 `k + 1` 填入 `intBoard[i][j]` 并更新相应的 `rowPossibleNums`，`colPossibleNums`，`blockPossibleNums`。在一轮循环中，如果有至少一个单元格被填充，我们就应该重复上述遍历，直至某一轮循环找不到任何不需要 DFS 搜索就能找到的答案。
 
-之后使用DFS进行搜索。对于每一个值为 `-1` 的单元格，尝试填入一个可能的数字并进行递归（能填入当前单元格 `intBoard[i][j]` 的可能的数字为满足条件 `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]` 的整数 `k`，且 `0 <= k < 9`）。如果搜索到有任何单元格的值为 `-1` 且没有任何可以填入的数字，则回溯到上一个填入数字的单元格，继续尝试下一个可能的数字。
+之后使用 DFS 进行搜索。对于每一个值为 `-1` 的单元格，尝试填入一个可能的数字并进行递归（能填入当前单元格 `intBoard[i][j]` 的可能的数字为满足条件 `!rowPossibleNums[i][k] && !colPossibleNums[j][k] && !blockPossibleNums[(i / 3) * 3 + (j / 3)][k]` 的整数 `k + 1`，且 `0 <= k < 9`）。如果搜索到有任何单元格的值为 `-1` 且没有任何可以填入的数字，则回溯到上一个填入数字的单元格，继续尝试下一个可能的数字。
 
 最后，将 `intBoard` 中的整数转换为字符，一一对应地填入 `board` 中即可。
 
 此算法时间复杂度为 `O((n!)^n)`，在本题中 n=9。值得一提的是，因为我们对给定二维矩阵进行了预处理，在通常情况下，此解法的时间复杂度会大幅度优于 `O((n!)^n)`。
 
-*基于模块化编程的思想，我们可以将代码中的整数9存入一个全局变量
+\*基于模块化编程的思想，我们可以将代码中的整数 9 存入一个全局变量
 
 Java
 
@@ -202,7 +202,7 @@ class Solution:
 
                             if possible_numbers > 1:
                                 break
-  
+
                         if possible_numbers == 1: # Update cell only if cell has 1 possible number to fill in
                             int_board[i][j] = num + 1
                             row_possible_nums[i][num] = True
