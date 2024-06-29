@@ -1,8 +1,8 @@
-# Sqrt(x) / x 的平方根 
+# Sqrt(x) / x 的平方根
 
 Leetcode: https://leetcode.com/problems/sqrtx/
 
-中文力扣： https://leetcode.cn/problems/sqrtx/
+中文力扣：https://leetcode.cn/problems/sqrtx/
 
 ## Description / 题目描述
 
@@ -18,31 +18,43 @@ You **must not use** any built-in exponent function or operator.
 
  **注意：** 不允许使用任何内置指数函数和算符，例如 `pow(x, 0.5)` 或者 `x ** 0.5` 。
 
+## Constraints **/ 提示**
+
+* `0 <= x <= 2^31 - 1`
+
 ## Solution: Binary Search / 二分搜索
 
-Using binary search to iterate from 2 to x/2, we set the left boundary to 2 because binary search would encounter errors when `x == 0` or `x == 1`. Therefore, we handle these two corner cases before searching. We set the right boundary to x/2 because the square root of x must be less than x/2.
+In this problem, we use binary search to find the integer square root of a number `x`. We begin by handling corner cases: if `x` equals `0` or `1`, we simply return `x`.
 
-During the search, the following three cases may occur:
+Based on mathematical principles, we know that the square root of `x` is less than or equal to `x/2`. Therefore, we confine our search to the interval `[2, x/2]` using binary search.
 
-1. `mid^2 <= x` and `(mid + 1)^2 > x`: Return `mid`.
-2. If the above condition is not met, and `mid^2 < x`: Update `left = mid + 1`.
-3. `mid^2 > x`: Update `right = mid - 1`.
+During the search process, we consider the following three cases:
 
-Please note: In some languages (like Java), `mid^2` may cause an overflow issue, so it's important to handle the data structure for `mid^2` accordingly. When `x == 2` or `x == 3`, the right boundary is initialized to a value less than the left boundary, so you should return the value of the right boundary at the end.
+1. If `mid^2 <= x` and `(mid + 1)^2 > x`, because the problem specifies rounded down to the nearest integer, `mid` is the integer square root we are looking for.
+2. If `mid^2 < x`, update the search range to `left = mid + 1`.
+3. If `mid^2 > x`, update the search range to `right = mid - 1`.
 
-The time complexity of this algorithm is O(n).
+It is important to note that in cases where `x == 2` or `x == 3`, initially the right boundary might be less than the left boundary. Therefore, following a defensive programming approach, after completing the binary search, we should return the value of the right boundary as the integer square root.
 
-使用二分搜索遍历[2, x/2]，左边界设置为2是因为当 `x == 0` 或 ` x == 1`时，二分搜索将会报错，所以我们在搜索前优先处理这两个边角案例；将右边界设置为x/2是因为 `sqrt(x)`一定小于x/2。
+It's worth mentioning that in some languages (like Java), care should be taken to ensure that `mid^2` does not cause overflow when using data structures.
 
-在搜索时，有可能出现一下3种情况：
+The time complexity of this algorithm is `O(log x)`.
 
-1. `mid^2 <= x` 且 `(mid + 1)^2 > x`时：返回 `mid`
-2. 若不满足上面的条件，且 `mid^2 < x`时：更新 `left = mid + 1`
-3. `mid^2 > x` 时：更新 `right  = mid - 1`
+本题我们将使用二分搜索进行解题，在搜索求解整数 `x` 的平方根时，我们首先处理边界情况：如果 `x` 等于 `0` 或 `1`，直接返回 `x`。
 
-请注意：部分语言(如Java)中 `mid^2`会出界，请具体记录 `mid^2`的数据结构；当 `x == 2` 或 `x == 3` 时，右边界会被初始化为小于左左边界的值，所以在最后应该返回右边界的值
+根据数学原理，已知 `x` 的平方根一定小于等于 `x/2`。因此，我们将搜索范围限定在 `[2, x/2]` 区间内进行二分搜索。
 
-此算法时间复杂度为`O(n)`
+在搜索过程中，我们需要考虑以下三种情况：
+
+1. 如果 `mid^2 <= x` 且 `(mid + 1)^2 > x`，因为题目要求返回整数部分结果, 此时 `mid` 即为所求的整数平方根。
+2. 如果 `mid^2 < x`，则更新搜索范围为 `left = mid + 1`。
+3. 如果 `mid^2 > x`，则更新搜索范围为 `right = mid - 1`。
+
+特别注意，在 `x == 2` 或 `x == 3` 的情况下，初始时右边界可能小于左边界，因此在二分搜索结束后，基于保护性编程的想法，应返回右边界的值作为整数平方根。
+
+值得一提的是，在一些语言中（如Java），在使用数据结构时应注意确保 `mid^2` 不会溢出。
+
+该算法的时间复杂度为 `O(log x)`。
 
 Java
 
