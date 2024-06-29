@@ -68,7 +68,6 @@ This solution can also solve for sorted arrays, and the time complexity of this 
 
    1. 此时，若 `nums[left] <= target < nums[mid]`, 则说明 `target`在升序区间，更新 `right = mid - 1`
    2. 反之，说明 `target`在另一边，更新 `left = mid + 1`
-
 4. 若 `nums[left] > nums[mid]`: 则说明 `[left, mid]`这个区间是乱序的，而 `[mid, right]`的区间是升序的(如 `[4, 5, 1, 2, 3]`)
 
    1. 此时，若 `nums[mid] < target <= nums[right]`, 则说明 `target`在升序区间，更新 `left = mid + 1`
