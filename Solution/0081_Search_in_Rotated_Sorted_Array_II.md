@@ -46,7 +46,7 @@ During the binary search, we may encounter several scenarios:
 3. If `nums[left] < nums[mid]`: This indicates that the interval `[left, mid]` is in ascending order, while the interval `(mid, right]` **might be** unsorted (e.g., `[3, 4, 5, 1, 2]`).
    1. If `nums[left] <= target < nums[mid]`, it means `target` is in the ascending interval. Update `right = mid - 1`.
    2. Otherwise, `target` is on the other side. Update `left = mid + 1`.
-4. If `nums[left] > nums[mid]`: This indicates that the interval `[left, mid]` is unsorted, while the interval `[mid, right]` **might be** in ascending order (e.g., `[4, 5, 1, 2, 3]`).
+4. If `nums[left] > nums[mid]`: This indicates that the interval `[left, mid]` is unsorted, while the interval `[mid, right]` is in ascending order (e.g., `[4, 5, 1, 2, 3]`).
    1. If `nums[mid] < target <= nums[right]`, it means `target` is in the ascending interval. Update `left = mid + 1`.
    2. Otherwise, `target` is on the other side. Update `right = mid + 1`.
 
@@ -64,14 +64,13 @@ This solution can also solve for sorted arrays, and the time complexity of this 
 
 1. `nums[mid] == target`: 找到答案，返回 `mid`
 2. 此时我们已知中间的值一定不是答案，如果当前左右边界的值和中间的值相等，说明左右边界也一定不是答案，我们可以更新左右边界 `left++, right--`，需要注意的是，每次更新完左右边界后都要重新计算中间值的下标
-3. 若 `nums[left] < nums[mid]`: 则说明 `[left, mid]`这个区间是升序的，而 `[mid, right]`的区间**有可能是**乱序的(如 `[3, 4, 5, 1, 2]`)
+3. 若 `nums[left] < nums[mid]`: 则说明 `[left, mid]`这个区间是升序的，而 `(mid, right]`的区间**有可能是**乱序的(如 `[3, 4, 5, 1, 2]`)
 
-   1. 此时，若 `nums[left] < target < nums[mid]`, 则说明 `target`在升序区间，更新 `right = mid - 1`
+   1. 此时，若 `nums[left] <= target < nums[mid]`, 则说明 `target`在升序区间，更新 `right = mid - 1`
    2. 反之，说明 `target`在另一边，更新 `left = mid + 1`
+4. 若 `nums[left] > nums[mid]`: 则说明 `[left, mid]`这个区间是乱序的，而 `[mid, right]`的区间是升序的(如 `[4, 5, 1, 2, 3]`)
 
-4. 若 `nums[left] > nums[mid]`: 则说明 `[left, mid]`这个区间是乱序的，而 `[mid, right]`的区间**有可能是**升序的(如 `[4, 5, 1, 2, 3]`)
-
-   1. 此时，若 `nums[mid] < target < nums[right]`, 则说明 `target`在升序区间，更新 `left = mid + 1`
+   1. 此时，若 `nums[mid] < target <= nums[right]`, 则说明 `target`在升序区间，更新 `left = mid + 1`
    2. 反之，说明 `target`在另一边，更新 `right = mid + 1`
 
 本解法在排序好的数组中也能求解， 此算法时间复杂度为 `O(log n)`
