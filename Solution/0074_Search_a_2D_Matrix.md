@@ -22,17 +22,20 @@ You must write a solution in `O(log(m * n))` time complexity.
 
 给你一个整数 `target` ，如果 `target` 在矩阵中，返回 `true` ；否则，返回 `false` 。
 
+## Constraints **/ 提示**
+
+* `m == matrix.length`
+* `n == matrix[i].length`
+* `1 <= m, n <= 100`
+* `-10^4 <= matrix[i][j], target <= 10^4`
+
 ## Solution: Binary Search / 二分搜索
 
-This problem uses a standard binary search approach. The key is to convert a one-dimensional index into a two-dimensional index to perform the search.
+This problem utilizes standard binary search. It simply involves converting two-dimensional coordinates into one-dimensional indices for searching within the matrix `matrix`. The method to find the value corresponding to an integer index `index` in the matrix is given by `matrix[index / matrix[0].length][index % matrix[0].length]`.
 
-After we get value of  `mid`, we convert it into `[mid / matrix[0].length][mid % matrix[0].length]` before performing the binary search.
+The time complexity of this algorithm is `O(log (m*n))`, where `m` is the number of rows and `n` is the number of columns in the matrix.
 
-This algorithm has a time complexity of `O(log (m*n))`, where `m` is the number of rows and `n` is the number of columns.
-
-本题采用标准的二分搜索，只需要将一维的下标转换为二维的下标再做搜索即可:
-
-每次计算出`mid`的值后，将其转换为 `[mid / matrix[0].length][mid % matrix[0].length]`后在进行二分搜索即可
+本题采用标准的二分搜索，只需要将二维的坐标转换为一维之后，再进行搜索即可(在矩阵 `matrix`中使用整数下标 `index`找到其对应的值的方法为 `matrix[index / matrix[0].length][index % matrix[0].length]`)
 
 此算法时间复杂度为 `O(log (m*n))`，`m`为行数，`n`为列数。
 
@@ -76,7 +79,7 @@ class Solution:
             mid = (left + right) // 2
             curRow = mid // cols
             curCol = mid % cols
-      
+    
             if matrix[curRow][curCol] == target:
                 return True
             elif matrix[curRow][curCol] > target:
