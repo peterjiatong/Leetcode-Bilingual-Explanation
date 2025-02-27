@@ -4,56 +4,32 @@ Leetcode: https://leetcode.com/problems/search-insert-position/
 
 中文力扣：https://leetcode.cn/problems/search-insert-position/
 
-## Description / 题目描述
-
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with `O(log n)` runtime complexity.
-
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-
-请必须使用时间复杂度为 `O(log n)` 的算法。
-
-## Constraints **/ 提示**
-
-* `1 <= nums.length <= 10^4`
-* `-10^4 <= nums[i] <= 10^4`
-* `nums` contains **distinct** values sorted in **ascending** order. /` nums` 为 **无重复元素** 的 **升序** 排列数组
-* `-10^4 <= target <= 10^4`
-
 ## Solution: Binary Search / 二分搜索
 
-When performing a binary search on the given array `nums`, there are three possible scenarios during the search:
+When performing a binary search on the given array `nums`, there are four possible cases for the position of `target`:
 
-1. If `nums[mid] == target`, return `mid`.
-2. If `nums[mid] > target`, update `right = mid`.
-3. If `nums[mid] < target`, update `left = mid`.
+1. target exists in the array (nums[mid] equals target)
+2. target does not exist in the array
+   1. target should be inserted before the entire array
+   2. target should be inserted at some position within the array
+   3. target should be inserted after the entire array
 
-When `left + 1` is not less than `right` (when left and right are adjacent), end the search. At this point, neither `left` nor `right` has been checked:
+Should consider whether boundary checks are needed after the search is completed
 
-1. If `nums[left] >= target`, return `left`.
-2. If `nums[right] >= target`, return `right`.
-3. If none of the above conditions are met, it means that `target` is greater than `right`, so return `right + 1`.
+对给定数组 `nums`进行二分搜索时，`target`的位置共有4种情况：
 
-The time complexity of this algorithm is O(log n).
+1. target 存在于数组中（nums[mid] == target)
+2. target 不存在于数组中：
+   1. target应该插入在整个数组之前
+   2. target应该插入在数组中的某个位置
+   3. target应该插入在整个数组之后
 
-对给定数组 `nums`进行二分搜索，搜索途中，有以下三种可能性：
-
-1. 若 `nums[mid] == target`, 返回 `mid`
-2. 若 `nums[mid] > target`, 则更新 `right = mid`
-3. 若 `nums[mid] < target`, 则更新 `left = mid`
-
-当 `left + 1` 不小于 `right`时(当左右相邻时)，结束搜索，此时，left和right本身还未被检查过：
-
-1. 若 `nums[left] >= target` 返回 `left`
-2. 若 `(nums[right] >= target) `返回 ` right`
-3. 若以上均不满足，说明 `target`大于 `right`，返回 `right + 1`
-
-此算法时间复杂度为O(log n)
+本题应该考虑在搜索结束后是否需要额外判断边界
 
 Java
 
 ```java
+// with boundary checks
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int left = 0;
@@ -74,9 +50,30 @@ class Solution {
 
 ```
 
+```java
+// without boundary checks
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int middle = 0;
+     
+        while (left <= right){
+            middle = left + ((right - left) >> 1);
+            if (nums[middle] < target) left = middle + 1;
+            else if (nums[middle] > target) right = middle - 1;
+            else return middle;
+        }
+
+        return right + 1;
+    }
+}
+```
+
 Python
 
 ```python
+# without boundary checks
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         left = 0
@@ -90,11 +87,30 @@ class Solution:
                 right = mid
             else:
                 left = mid
-      
+  
         if nums[left] >= target:
             return left
         elif nums[right] >= target:
             return right
         return right + 1
-    
+  
+```
+
+```python
+# without boundary checks
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] > target:
+                right = mid - 1
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                return mid
+  
+        return right + 1
 ```
