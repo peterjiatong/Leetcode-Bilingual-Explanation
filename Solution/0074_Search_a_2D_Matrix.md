@@ -79,7 +79,7 @@ class Solution:
             mid = (left + right) // 2
             curRow = mid // cols
             curCol = mid % cols
-    
+  
             if matrix[curRow][curCol] == target:
                 return True
             elif matrix[curRow][curCol] > target:
@@ -88,4 +88,67 @@ class Solution:
                 left = mid + 1
    
         return False
+```
+
+## Solution: Binary Search Twice / 两次二分搜索
+
+We can also first use binary search to determine which row the target is in, and then perform another binary search within that specific row.
+
+This approach has a time complexity of `O(log m + log n)`.
+
+我们也可以先使用二分搜索确定答案在那一行，然后再在对应的那一行中再进行一次二分搜索
+
+此解法时间复杂度为`O(log m + log n)`
+
+Java
+
+```java
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int exact_line = find_line(matrix, target);
+	//corner case
+        if (exact_line == -1) return false;
+  
+	// binary search in specific row
+	int left = 0;
+        int right = matrix[0].length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int val = matrix[exact_line][mid];
+
+            if (val == target) return true;
+            else if (val < target) left = mid + 1;
+            else right = mid - 1;
+  
+        }
+        return false;
+
+    }
+
+    public int find_line (int[][] matrix, int target){
+        // field
+        int top = 0;
+        int bot = matrix.length - 1;
+
+        while (top <= bot){
+            int mid = top + (bot - top) / 2;
+
+            if (matrix[mid][0] > target) bot = mid - 1; 
+            //means target exist above the mid line
+            else if (matrix[mid][matrix[0].length - 1] < target) top = mid + 1;
+            //means target exist below the mid line
+            else return mid;
+            // if matrix[mid][0] < target < matrix[mid][matrix[0], then return this mid
+        }
+  
+        return -1; // if target doesn't exist in any line, then return -1
+    }
+}
+```
+
+Python
+
+```
+
 ```

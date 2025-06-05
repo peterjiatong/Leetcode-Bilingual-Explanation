@@ -10,6 +10,54 @@ leetcode: https://leetcode.com/problems/spiral-matrix-ii/description/
 
 Java
 
+```java
+class Solution {
+    public int[][] generateMatrix(int n) {
+        // Corner case
+        if (n == 1) return new int [][] {{1}};
+ 
+        int to_fill = 1;
+        int[][] ans = new int[n][n];
+        int left = 0;
+        int right = n - 1;
+        int top = 0;
+        int bottom = n - 1;
+
+        while (to_fill <= n*n) {
+	    # fill-in the top layer
+            for (int i = left; i <= right; i++) {
+                ans[top][i] = to_fill;
+                to_fill ++;
+            }
+            top ++;
+	  
+	    # fill-in the right side
+            for (int i = top; i <= bottom; i++) {
+                ans[i][right] = to_fill;
+                to_fill ++;
+            }
+            right --;
+
+	    # fill-in the bottom layer
+            for (int i = right; i >= left; i--) {
+                ans[bottom][i] = to_fill;
+                to_fill ++;
+            }
+            bottom --;
+
+	    # fill-in the left side
+            for (int i = bottom; i >= top; i--) {
+                ans[i][left] = to_fill;
+                to_fill ++;
+            }
+            left ++;
+        }
+
+
+        return ans;
+    }
+}
+```
 
 Python
 
