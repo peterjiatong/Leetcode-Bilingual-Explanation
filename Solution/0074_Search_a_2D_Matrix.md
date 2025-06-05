@@ -98,7 +98,7 @@ This approach has a time complexity of `O(log m + log n)`.
 
 我们也可以先使用二分搜索确定答案在那一行，然后再在对应的那一行中再进行一次二分搜索
 
-此解法时间复杂度为`O(log m + log n)`
+此解法时间复杂度为 `O(log m + log n)`
 
 Java
 
@@ -149,6 +149,42 @@ class Solution {
 
 Python
 
-```
+```python
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+
+        def find_exact_row(matrix, target):
+            top = 0
+            bottom = len(matrix) - 1
+
+            while top <= bottom:
+                mid = top + (bottom - top) // 2
+                if matrix[mid][0] > target:
+                    bottom = mid - 1
+                elif matrix[mid][len(matrix[0]) - 1] < target:
+                    top = mid + 1
+                else:
+                    return mid
+
+            return -1
+
+        exact_row = find_exact_row(matrix, target)
+
+        if exact_row == -1:
+            return False
+
+        left = 0
+        right = len(matrix[0]) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if matrix[exact_row][mid] == target:
+                return True
+            elif matrix[exact_row][mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        return False
+
 
 ```
