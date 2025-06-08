@@ -51,8 +51,10 @@ When you wish to search for a specific tag or difficulty, or cannot find the pro
 |                                                             [278. First Bad Version](/Solution/0278_First_Bad_Version.md)                                                             |                                                                                                    |         Easy         |
 |                                                               [283. Move Zeroes / 移动零](/Solution/0283_Move_Zeroes.md)                                                               |                                           Pointer / 指针                                           |     Easy / 简单     |
 |                                                          [344. Reverse String / 反转字符串](/Solution/0344_Reverse_String.md)                                                          |                                        Two Pointers / 双指针                                        | Very Easy / 非常简单 |
+|                                                        [509. Fibonacci Number / 斐波那契数](/Solution/0509_Fibonacci_Number.md)                                                        |     #1 Brute Force / 暴力法<br />#2 Dynamic Programming / 动态规划<br />#3 Iterative / 迭代法     |     Easy / 简单     |
 |                                                        [525. Contiguous Array / 连续数组](/Solution/0525_Contiguous_Array.md)                                                        |                                          Hashmap / 哈希表                                          |    Medium / 中等    |
 |                                                [560. Subarray Sum Equals K / 和为 K 的子数组](/Solution/0560_Subarray_Sum_Equals_K.md)                                                |                          #1 Prefix Sum / 前缀和<br />#2 Hashmap / 哈希表                          |    Medium / 中等    |
+|                        [702. Search in a Sorted Array of Unknown Size / 搜索长度未知的有序数组](/Solution/0702_Search_in_a_Sorted_Array_of_Unknown_Size.md) 🔐                        |                                      Binary Search / 二分搜索                                      |    Medium / 中等    |
 |                                                            [704. Binary Search / 二分查找](/Solution/0704_Binry_Search.md)                                                            |                                      Binary Search / 二分搜索                                      |     Easy / 简单     |
 |                                                       [707. Design Linked List / 设计链表](/Solution/0707_Design_Linked_List.md)                                                       |                                     Single Linked List / 单链表                                     |    Medium / 中等    |
 |                                                  [759. Employee Free Time / 员工空闲时间](/Solution/0759_Employee_Free_Time.md) 🔐                                                  |                                           Sorting / 排序                                           |     Hard / 困难     |
@@ -60,6 +62,10 @@ When you wish to search for a specific tag or difficulty, or cannot find the pro
 |                                            [977. Squares of a Sorted Array / 有序数组的平方](/Solution/0977_Squares_of_a_Sorted_Array.md)                                            |                                        Two Pointers / 双指针                                        |     Easy / 简单     |
 
 Number of Problem Solved / 已收录题目数量：42
+
+If you found any problems, please submit a PR, TY!!
+
+如发现任何问题，请提交PR，感谢🙏
 
 （For some problems, the Java and Python solutions maybe slightly different. This is because I tend to solve problems in one language first, and revisit them later usinb the other language as a review.)
 
