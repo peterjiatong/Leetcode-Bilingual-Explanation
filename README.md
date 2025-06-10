@@ -60,10 +60,12 @@ When you wish to search for a specific tag or difficulty, or cannot find the pro
 |                                                            [704. Binary Search / 二分查找](/Solution/0704_Binry_Search.md)                                                            |                                      Binary Search / 二分搜索                                      |     Easy / 简单     |
 |                                                       [707. Design Linked List / 设计链表](/Solution/0707_Design_Linked_List.md)                                                       |                                     Single Linked List / 单链表                                     |    Medium / 中等    |
 |                                                  [759. Employee Free Time / 员工空闲时间](/Solution/0759_Employee_Free_Time.md) 🔐                                                  |                                           Sorting / 排序                                           |     Hard / 困难     |
+|                                                          ⭐️[912. Sort an Array / 排序数组](/Solution/0912_Sort_an_Array.md)                                                          |                                  #1 Merge Sort /**归并排序**                                  |                      |
 |                                                     [973. K Closest Points to Origin](/Solution/0973_K_Close_Points_To_Origin.md)                                                     |                                                                                                    |        Medium        |
 |                                            [977. Squares of a Sorted Array / 有序数组的平方](/Solution/0977_Squares_of_a_Sorted_Array.md)                                            |                                        Two Pointers / 双指针                                        |     Easy / 简单     |
+|                                 [1071. Greatest Common Divisor of Strings / 字符串的最大公因子](/Solution/1071_Greatest_Common_Divisor_of_Strings.md)                                 |                    #1 Traverse / 遍历<br />#2 Length‘s GCD / 长度的最大公因数                    |     Easy / 简单     |
 
-Number of Problem Solved / 已收录题目数量：46
+Number of Problem Solved / 已收录题目数量：48
 
 If you found any problems, please submit a PR, TY!!
 
